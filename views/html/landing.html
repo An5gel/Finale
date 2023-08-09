@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../set/bootstrap/css" />
+    <link rel="stylesheet" href="../css/landing.css" />
+    <title>DV parking</title>
+  </head>
+  <body>
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg my-nav">
+                        <div class="container-fluid">
+                          <a class="navbar-brand" href="#">DV PARKING</a>
+                          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Link</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                                </li>
+                                </ul>
+                                <div class="buts">
+                                    <button
+                                      type="button"
+                                      id="btn"
+                                      class="btn-p"
+                                      onclick="location.href = 'loginpage.html';"
+                                    >
+                                      Login
+                                    </button>
+                                    <button
+                                      type="button"
+                                      id="btn-pp"
+                                      class="btn-p"
+                                      onclick="location.href = 'register-page.html';"
+                                    >
+                                      Sign up
+                                    </button>
+                                  </div>
+                           </div>
+                        </div>
+                </nav>
+                <div class=" main card-body image-body">
+                    <div class="slide-container">
+                        <span class="slider-span" id="slider-span1"></span>
+                        <span class="slider-span" id="slider-span2"></span>
+                         <span class="slider-span" id="slider-span3"></span>
+                        <div class="image-slider">
+                            <div class="card slide-div" id="slide-1">
+                                <img src="../images/tire.jpeg" class="img" id="img1" alt="...">
+                                <div class="card-body">
+                                <a href="../htmlfiles/tireclinic/tire.html"><h5 class="card-title title">TIRE CLINIC</h5></a>
+                                <p class="card-text text">For all your tire solutions.</p>
+                                </div>
+                                <a href="#slider-span1" class=" button" id="button-1"></a>
+                            </div>
+                            <div class="card slide-div" id="slide-1">
+                                <img src="../images/img2.jpeg" class="img" id="img2" alt="...">
+                                <div class="card-body">
+                                    <a href="../htmlfiles/parking/parking.html"><h5 class="card-title title">PARKING</h5></a>
+                                <p class="card-text text">We define space.</p>
+                                </div>
+                                <a href="#slider-span2" class=" button" id="button-1"></a>
+                            </div>
+                            <div class="card slide-div" id="slide-3">
+                                <img src="../images/bat.jpeg" class="img" id="img3" alt="...">
+                                <div class="card-body">
+                                    <a href="../htmlfiles/battery/battery.html"><h5 class="card-title title">BATTERY HIRE</h5></a>
+                                <p class="card-text text">Need battery urgently, we got you.</p>
+                                </div>
+                                <a href="#slider-span3" class=" button" id="button-3"></a>
+                            </div>
+                        </div>    
+                    </div>
+                </div>   
+                <div class="footer">
+                    <h4>Your better parking choice</h4>
+                </div>
+            </div>
+        </div>
+        <script src="../set/bootstrap/js"></script>
+    </body>
+</html>

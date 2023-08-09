@@ -1,0 +1,61 @@
+body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(#dff6ff,#5d8bf4,#2d31fa,#051367);
+    overflow: hidden;
+     /* background-image: url("../allimages/bg2.jpeg");
+    background-size: cover;
+    backdrop-filter:b lur(5x); */
+
+}
+.my-nav{
+   background-color: #dff6ff;
+   color: #fff;
+   
+}
+
+.register{
+    height: 600px;
+    width: 1000px;
+    margin: 20px 200px;
+    border: 1px solid black;
+    padding: 0px;
+    border-radius: 20px;
+    background-color:#051367;
+    color: #070000;
+    border-radius: 20px;
+}
+
+.ton-b{
+    width: 100%;
+}
+.form{
+    margin-bottom: 0px;
+    margin-top: -50px;
+    margin-right: 0px;
+    padding: 20px;
+    float: right;
+    width: 500px;
+    height: 500px;
+    color: #fff;
+    font-size: 14px;
+    background-color:transparent;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+}
+img{
+    margin-top: 10px;
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+   
+}
+#title{
+    color: #fff;
+    padding: 10px; 
+    align-self: center;  
+}

@@ -1,0 +1,45 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/bootstrap/set/bootstrap/css')
+  link(rel='stylesheet' href='/css/battery.css')
+  title dv parking
+.container-fluid
+  .row
+    nav.navbar.navbar-expand-lg.my-nav
+      .container-fluid
+        a.navbar-brand(href='#') DV PARKING
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.me-auto.mb-2.mb-lg-0
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='parking') Parking
+            li.nav-item
+              a.nav-link(href='tire') Tire clinic
+            li.nav-item.dropdown
+              a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+              ul.dropdown-menu
+                li
+                  a.dropdown-item(href='#') Action
+                li
+                  a.dropdown-item(href='#') Another action
+                li
+                  hr.dropdown-divider
+                li
+                  a.dropdown-item(href='#') Something else here
+            li.nav-item
+              a.nav-link.disabled(aria-disabled='true')
+          button.btn.btn-outline-success(type='button' onclick="location.href = 'tab';") ADD
+          button#btn.btn.btn-outline-primary(type='button' onclick="location.href = 'services';")
+              | Back
+    #slide-1.card.slide-div
+      img#img2.img(src='../../images/bat.jpeg' alt='...')
+      .card-body
+        h5.card-title.title baterry hire
+        p.card-text.text
+          .mb-3.form-check
+            input#valveCheck.form-check-input(type='checkbox')
+            label.form-check-label(for='valveCheck') 5000
+      a#button-1.button(href='#slider-span2')

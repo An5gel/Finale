@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../public/bootstrap/set/bootstrap/css">
+  <link rel="stylesheet" href="../../public/css/parkingform.css">
+  <title>Document</title>
+</head>
+<div class="container-fluid">
+  <div class="row">
+    <nav class="navbar navbar-expand-lg my-nav">
+      <div class="container-fluid"><a class="navbar-brand" href="#">DV PARKING</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="tire">Tire clinic</a></li>
+            <li class="nav-item"><a class="nav-link" href="battery">Battery</a></li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link disabled" aria-disabled="true"></a></li>
+          </ul>
+          <button class="btn btn-outline-success" type="submit">ADD</button>
+        </div>
+      </div>
+    </nav>
+    <div class="register">
+      <form name="registerform" action="#" onsubmit="return Validate();" method="POST">
+        <div id="title">
+          <h3>PARKING REGISTER</h3>
+        </div><img src="../../public/images/truck.jpeg" alt="">
+        <div class="form row g-3">
+          <div class="col-md-12">
+            <label class="form-label" for="firstname">Driver's Name</label>
+            <input class="form-control" id="firstname" type="text" name="firstname"><span id="dnameerror"></span>
+          </div>
+          <div class="col-md-12">
+            <label class="form-label" for="telephone">Phone</label>
+            <input class="form-control" id="telephone" type="text" name="telephone"><span id="cnumbererror"></span>
+            <div class="col-md-6"></div>
+            <label class="form-label" for="ninnumber">NIN Number</label>
+            <input class="form-control" id="ninnumber" type="alpha numeric" name="ninnumber"><span id="ninnumError"></span>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="carnumber">Number plate</label>
+            <input class="form-control" id="carnumber" type="alpha numeric" name="carnumber"><span id="carnumError"></span>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="vehiclemodel">Vehicle model</label>
+            <select class="form-select" id="inputState" name="vehiclemodel">
+              <option selected="">Choose...</option>
+              <option value="Toyota">Toyota</option>
+              <option value="Rangerover">Rangerover</option>
+            </select><span id="modelError"></span>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" for="vehiclecolor">Vehicle Color</label>
+            <select class="form-select" id="inputState" name="vehiclecolor">
+                <option selected="">Choose...</option>
+                <option value="Silver">Silver</option>
+                <option value="White">White</option>
+                <option value="Black">Black</option>
+                <option value="Red">Red</option>
+                <option value="Blue">Blue</option>
+            </select>    
+            <span id="vColorError"></span>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label" for="date">Date</label>
+            <input class="form-control" id="exampleInputDate1" type="date" name="date">
+          </div>
+          <div class="col-md-3">
+            <label class="form-label" for="exampleInputTime1">Time</label>
+            <input class="form-control" id="exampleInputTime1" name="time">
+          </div>
+          <div class="col-12">
+            <button class="ton-b btn btn-primary" type="submit" onsubmit="location.href='parking.html'">SUBMIT</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="../../public/js/formvalidation.js"></script>
+  <script src="../../public/bootstrap/set/bootstrap/js"></script>
+  
+</div>

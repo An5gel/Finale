@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../public/bootstrap/set/bootstrap/css" />
+    <link rel="stylesheet" href="../../public/css/signup.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="register"></div>
+            <form name="loginupform" method="POST" action="/api/">
+              <div id="title">
+                <h3>LOGIN</h3>
+              </div>
+
+              <img src="/images/boda.jpeg" alt="" />
+              <div class="form row g-3"></div>
+              <div class="col-12">
+                label.form-label(for='email') Email
+                input#email.form-control(type='email' name='email')
+              </div>
+              <div class="col-12">
+                label.form-label(for='password') Password
+                input#password.form-control(type='password' name='password')
+              </div>
+              <div class="col-12">
+                <button class="ton-b btn btn.btn-primary type='submit'">
+                  LOGIN
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../../public/bootstrap/set/bootstrap/js"></script>
+  </body>
+</html>

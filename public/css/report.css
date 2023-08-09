@@ -1,0 +1,151 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: sans-serif;
+  overflow: hidden;
+  
+  background-image: url("/images/bg2.jpeg");
+  background-size: cover;
+  backdrop-filter: blur(5px);
+    
+}
+table{
+  width: 100%;
+}
+p{
+  font-size: 30px;
+  text-transform: uppercase;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.search-wrapper{
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.search-wrapper input{
+  height: 100%;
+  padding: .5rem;
+  border: none;
+  outline: none;
+}
+
+.search-wrapper span{
+  display: inline-block;
+  padding: 0rem 1rem;
+  font-size: 1.5rem;
+}
+td button:nth-child(1){
+  background-color: hsl(148, 98%, 41%);
+
+}
+
+td button:nth-child(2){
+  background-color: hwb(0 0% 2%);
+  
+}
+
+.table-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: transparent;
+}
+
+.table-header p{
+  color: rgb(158, 149, 149);
+}
+
+.full-table{
+  height: 650px;
+  overflow: auto;
+  width: 100%;
+}
+
+table{
+  width: 100px;
+  table-layout: auto;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+
+thead th{
+  position: sticky;
+  top: 0;
+  background-color: #29323c;
+  color: #bed1e9;
+  font-size: 15px;
+}
+
+th,td{
+  border-bottom: 1px solid #dddddd;
+  padding: 10px 20px;
+  /* word-break: break-all; */
+  text-align: center;
+}
+
+tr:hover td{
+  color: #0298cf;
+  cursor: pointer;
+  background-color: #e2e5e8;
+}
+
+::webkit-scrollbar{
+  height: 50px;
+  width: 50px;
+
+}
+
+::webkit-scrollbar-track{
+  box-shadow: insert 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::webkit-scrollbar-thumb{
+  box-shadow: insert 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.dailyprice{
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 150px;
+  height: 50px;
+  background-color: #f7f9f9;
+}
+.parkingprice{
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 100px;
+  height: 50px; 
+  background-color: #f4f7f9;
+}
+.tireprice{
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 100px;
+  height: 50px;
+  background-color: #f2f5f7; 
+}
+.batteryprice{
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 100px;
+  height: 50px;
+  background-color: #f4f6f7; 
+}
+.price{
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-end;
+  margin: 10px;
+}

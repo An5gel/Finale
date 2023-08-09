@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../set/bootstrap/css">
+    <link rel="stylesheet" href="../css/parkingform.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg my-nav">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">DV PARKING</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="tire.html">Tire clinic</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="battery.html">Battery</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true"></a>
+                        </li>
+                        </ul>
+                        <button class="btn btn-outline-success" type="submit">ADD</button>
+                    </div>
+                </div>
+            </nav>
+            <div class="register">
+                <form>
+                    <div id="title"><h3>TIRE CLINIC REGISTER</h3></div>
+                    <img src="../images/ptire.jpeg" alt="">
+                    <div class="form row g-3">
+                        <div class="col-md-12">
+                            <label for="firstname" class="form-label">Driver's Name</label>
+                            <input type="text" class="form-control" id="firstname" name="firstname">
+                            <span id="dnameerror"></span>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="numberp" class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="numberp" name="numberp">
+                            <span id="cnumbererror"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="carnum" class="form-label">Number plate</label>
+                            <input type="alpha numeric" class="form-control" id="carnum">
+                            <span id="carnumError"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="model" class="form-label">Vehicle model</label>
+                            <select id="inputState" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>...</option>
+                            </select>
+                            <span id="modelError"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="vehiclecolor" class="form-label">Vehicle Color</label>
+                            <input type="color" id="vehiclecolor" class="form-control" >
+                            <span id="vColorError"></span>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="exampleInputPassword1" class="form-label">Date</label>
+                            <input type="date" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="exampleInputPassword1" class="form-label">Time</label>
+                            <input type="time" s class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" onsubmit="location.href='parking.html'" class="ton-b btn btn-primary">SUBMIT</button>
+                        </div>
+                    </div>    
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

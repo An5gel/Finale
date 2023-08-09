@@ -1,0 +1,53 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/bootstrap/set/bootstrap/css')
+  link(rel='stylesheet' href='/css/landing.css')
+  title DV parking
+.container-fluid
+  .row
+    nav.navbar.navbar-expand-lg.my-navbar
+      .container-fluid
+        a.navbar-brand(href='#') DV PARKING
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.me-auto.mb-2.mb-lg-0
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='#') Home
+          .buts
+            button#btn.btn-p(type='button' onclick="location.href = 'login';")
+              | Login
+            button#btn-pp.btn-p(type='button' onclick="location.href = 'signup';")
+              | Sign up
+    .main.card-body.image-body
+      .slide-container
+        span#slider-span1.slider-span
+        span#slider-span2.slider-span
+        span#slider-span3.slider-span
+        .image-slider
+          #slide-1.card.slide-div
+            img#img1.img(src='../images/tire.jpeg' alt='...')
+            .card-body
+              a(href='tire')
+                h5.card-title.title TIRE CLINIC
+              p.card-text.text For all your tire solutions.
+            a#button-1.button(href='#slider-span1')
+          #slide-1.card.slide-div
+            img#img2.img(src='../images/img2.jpeg' alt='...')
+            .card-body
+              a(href='parking')
+                h5.card-title.title PARKING
+              p.card-text.text We define space.
+            a#button-1.button(href='#slider-span2')
+          #slide-3.card.slide-div
+            img#img3.img(src='../images/bat.jpeg' alt='...')
+            .card-body
+              a(href='battery')
+                h5.card-title.title BATTERY HIRE
+              p.card-text.text Need battery urgently, we got you.
+            a#button-3.button(href='#slider-span3')
+    .footer
+      h4 Your better parking choice
+script(src='../set/bootstrap/js')

@@ -1,0 +1,53 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/bootstrap/set/bootstrap/css')
+  link(rel='stylesheet' href='/css/report.css')
+  title Document
+
+  .container-fluid.table
+    h1 DV REPORT
+  .price
+    div.parkingprice
+    div.batteryprice
+    div.tireprice
+    div.dailyprice
+
+table.table()
+  thead.table-dark
+    tr
+      th(scope='col') Driver's name
+      th(scope='col') Phone
+      th(scope='col') Number plate
+      th(scope='col') NIN Number
+      th(scope='col') Vehicle Model
+      th(scope='col') Vehicle color
+      th(scope='col') Date
+      th(scope='col') Time
+      th(scope='col') Delete
+      th(scope='col') Edit
+     
+  tbody
+  if persons.length 
+    each client in persons
+      tr
+        td #{client.firstname}
+        td #{client.telephone}
+        td #{client.carnumber}
+        td #{client.ninnumber}
+        td #{client.vehiclemodel}
+        td #{client.vehiclecolor}
+        td #{client.date}
+        td #{client.time}
+        td
+          form(action="/api/report/delete" method="POST")
+            input(type="hidden" name="id" value=client._id)
+            button.btn.btn-danger(type="submit") Delete
+        td 
+          a.btn.btn-warning(href="/api/form/edit/"+client._id) Edit   
+          a(href=`/api/form/edit/"${client._id}`)    
+       
+  //- else 
+    p There are no employees in the database
+script(src='/bootstrap/set/bootstrap/js')

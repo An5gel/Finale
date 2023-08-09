@@ -1,0 +1,54 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/bootstrap/set/bootstrap/css')
+  link(rel='stylesheet' href='/css/login.css')
+  title Document
+.container-fluid
+  .row
+    nav.navbar.navbar-expand-lg.my-nav
+      .container-fluid
+        a.navbar-brand(href='#') DV PARKING
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.me-auto.mb-2.mb-lg-0
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='#') Home 
+            li.nav-item
+              a.nav-link(href='#') 
+            li.nav-item.dropdown
+              a.nav-link.dropdown-toggle( role='button' data-bs-toggle='dropdown' aria-expanded='false') Services
+              ul.dropdown-menu
+                li
+                  a.dropdown-item(href='battery') Battery
+                li
+                  a.dropdown-item(href='tire') Tire clinic
+                li
+                  hr.dropdown-divider
+                li
+                  a.dropdown-item(href='parking') Parking
+            li.nav-item
+              a.nav-link(href="")
+          button#btn.btn.btn-outline-primary(type='button' onclick="location.href = 'landing';")
+              | Back
+    .register
+      form(name="loginupform" method="POST" action="/api/login")
+        #title
+          h3  LOGIN
+        img(src='/images/boda.jpeg' alt='')
+        .form.row.g-3
+             .col-12
+                label.form-label(for='email') Email
+                input#email.form-control(type='email' name='email')
+           
+             .col-12
+                label.form-label(for='password') Password
+                input#password.form-control(type='password' name='password')
+             .col-12
+                button.ton-b.btn.btn-primary(type='submit') LOGIN
+
+
+  script(src='/js/formvalidation.js')
+  script(src='/bootstrap/set/bootstrap/js')
