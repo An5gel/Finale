@@ -1,0 +1,96 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/bootstrap/set/bootstrap/css')
+  link(rel='stylesheet' href='/css/tab.css')
+  title Document
+.tabs
+  .row
+    nav.navbar.navbar-expand-lg.my-nav
+      .container-fluid
+        a.navbar-brand(href='#') DV PARKING
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.me-auto.mb-2.mb-lg-0
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='tire') Tire clinic
+            li.nav-item
+              a.nav-link(href='battery') Battery
+            li.nav-item.dropdown
+              a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+              ul.dropdown-menu
+                li
+                  a.dropdown-item(href='#') Action
+                li
+                  a.dropdown-item(href='#') Another action
+                li
+                  hr.dropdown-divider
+                li
+                  a.dropdown-item(href='#') Something else here
+            li.nav-item
+              a.nav-link.disabled(aria-disabled='true')
+          button.btn.btn-outline-success(type='submit') Back
+    .card.col-sm-2.sm-card(style='width: 10rem')
+      ul.list-group.list-group-flush
+        li.list-group-item Rct 001
+        li.list-group-item PaulW
+        li.list-group-item 5000
+    .card.col-sm-2.sm-card(style='width: 10rem')
+      ul.list-group.list-group-flush
+        li.list-group-item Rct 002
+        li.list-group-item Name
+        li.list-group-item Total price
+    .card.col-sm-2.sm-card(style='width: 10rem')
+      ul.list-group.list-group-flush
+        li.list-group-item Rct 003
+        li.list-group-item Name
+        li.list-group-item Total price
+    .col-lg-6(style='height: 500px')
+      .container.tab-let
+        .row
+          .tab
+            ul.nav.nav-tabs
+              li.nav-item
+                a.nav-link.active(aria-current='page' href='#') Rct 001
+              li.nav-item
+                a.nav-link(href='#') Rct 002
+          .content
+            .row
+              .manager
+                p  Client : Ray
+                p Manager : PaulW 
+              .col-9
+                .card-table
+                  .card-body
+                    .detail
+                      h5.table-header Details
+                      .time
+                        p Time in : --:--pm
+                        p Time Out : : --:--pm
+                        p
+                    .full-table
+                      table
+                        thead
+                          tr
+                            th Service
+                            th Car Number
+                            th Price(shs)
+                        tr
+                          td Night Park
+                          td UBV456F
+                          td 5000
+                      .totalprice
+                        p.total Total
+                        p.price 5000
+              .col-3
+                #card-button
+                  .card-body.card-button
+                    .btn-group-vertical.tab-button
+                      button.btn-p.btn.btn-secondary(type='button' onclick="location.href='client'") Post
+                      button.btn-p.btn.btn-primary(type='button' onclick="location.href='services'") Add
+                      button.btn-p.btn.btn-danger(type='button' onclick="location.href='delete'") Cancel
+                      button.btn-p.btn.btn-light(type='button' onclick="location.href='delete'") Void
+                      button.btn-p.btn.btn-primary(type='button' onclick="location.href='print'") Print Bill
+                      button.btn-p.btn.btn-success(type='button' onclick="location.href=''") Payment

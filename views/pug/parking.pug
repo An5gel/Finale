@@ -31,9 +31,10 @@ head
                   a.dropdown-item(href='#') Something else here
             li.nav-item
               a.nav-link.disabled(aria-disabled='true')
-          button.btn.btn-outline-success(type='submit') ADD
-          button#btn.btn.btn-outline-primary(type='button' onclick="location.href = 'services';")
-              | Back
+          
+          button#but.btn.btn-outline-success(type='submit') ADD
+          button.btn.btn-outline-primary(type='button' onclick="location.href = 'services';")
+                | Back
     .main.card-body.image-body
       .slide-container
         span#slider-span1.slider-span
@@ -42,7 +43,7 @@ head
         span#slider-span4.slider-span
         span#slider-span5.slider-span
         .image-slider
-          #slide-1.card.card-1.slide-div
+          .card.card-1.slide-div
             img#img1.img(src='../../images/truck.jpeg' alt='...')
             .card-body
               h5.card-title.title Truck
@@ -57,7 +58,7 @@ head
                   input#truckCheck3.form-check-input(type='checkbox')
                   label.form-check-label(for='exampleCheck1') 3HRS - 2000
             a#button-1.button(href='#slider-span1')
-          #slide-2.card.slide-div
+          .card.slide-div
             img#img2.img(src='../../images/taxi.jpeg' alt='...')
             .card-body
               h5.card-title.title Taxis
@@ -90,7 +91,7 @@ head
           #slide-4.card.slide-div
             img#img4.img(src='../../images/pcar.jpeg' alt='...')
             .card-body
-              h5.card-title.title personal car
+              h5.card-title.title Personal car
               ul
                 .mb-3.form-check
                   input#pcarCheck1.form-check-input(type='checkbox')

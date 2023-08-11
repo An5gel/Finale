@@ -1,6 +1,6 @@
- const express = require("express");
- const path = require("path")
-   require('dotenv').config();
+const express = require("express");
+const path = require("path")
+require('dotenv').config();
 const passport =require("passport")
 // importing our database
 const connectDB = require("./config/dbconfig");
@@ -9,11 +9,13 @@ const port = process.env.PORT || 4000;
 const app = express();
 
 const Signup = require("./models/signupModels");
- // importing parkingRoutes
- const landingRoutes = require('./controllers/landingRoutes')
- const parkingRoutes = require('./controllers/parkingRoutes')
- const signupRoutes = require('./controllers/signupRoutes')
- const loginRoutes = require('./controllers/loginRoutes')
+ 
+// importing parkingRoutes
+const landingRoutes = require('./controllers/landingRoutes')
+const parkingRoutes = require('./controllers/parkingRoutes')
+const signupRoutes = require('./controllers/signupRoutes')
+const loginRoutes = require('./controllers/loginRoutes')
+const tabRoutes = require('./controllers/tabRoutes')
 
 // calling and setting express session
 const expressSession = require("express-session")({
@@ -23,7 +25,7 @@ const expressSession = require("express-session")({
 })
 
 app.use(express.urlencoded({ extended:false }));
- app.use(express.json())
+app.use(express.json())
 
 // calling the confuguration to run
 connectDB();
@@ -45,7 +47,7 @@ passport.deserializeUser(Signup.deserializeUser());
 
  
 // setting up directory for static files
- app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')))
 
 
 //  using imported routes
@@ -53,8 +55,8 @@ app.use('/api', landingRoutes)
 app.use('/api', parkingRoutes)
 app.use('/api', signupRoutes)
 app.use('/api', loginRoutes)
+app.use('/api', tabRoutes)
 
- // running the server on a specific port(3000)
- // this is always the last line in the server file
-
+// running the server on a specific port(3000)
+// this is always the last line in the server file
 app.listen(port, ()=> console.log(`server is running at http://localhost:${port}`));
