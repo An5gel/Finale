@@ -21,13 +21,22 @@ router.post("/regregister", async (req, res) => {
         const client = new Parker(req.body);
         await client.save();
         console.log(req.body);
-        res.redirect("/api/services");
-    }
-    catch(error){
+        res.render("report.pug"); 
+    } catch(error){
         res.status(400).render("registerform.pug")
         console.log(error);
     }
 });
+    // router.post("/addFields", async (req, res) => {
+    //     const id = req.session.user.parker.id;
+    //     // Get the name and email from the form
+    //     const { service, price } = req.body;
+    //     // Add them to the parker's document
+    //     await Park.findOneAndUpdate(id, { $set: {service, price } });
+    //   });
+      
+   
+
 
     router.get("/report", async(req, res)=>{
         try{
@@ -40,7 +49,7 @@ router.post("/regregister", async (req, res) => {
         }
 });
 
-router.post("/form/delete", async (req, res )=>{
+router.post("/report/delete", async (req, res )=>{
     try{
         await Parker.deleteOne({_id: req.body.id});
         res.redirect("back");

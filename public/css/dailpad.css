@@ -1,0 +1,99 @@
+body {
+    background-image: url("../allimages/bg2.jpeg");
+    background-size: cover;
+    backdrop-filter:b lur(5x);
+  }
+  
+  .row {
+    margin: 0 auto;
+    width: 280px;
+    clear: both;
+    text-align: center;
+    font-family: 'Exo';
+  }
+  
+  .digit,
+  .dig {
+    float: left;
+    padding: 10px 30px;
+    width: 30px;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  .sub {
+    font-size: 0.8rem;
+    color: grey;
+  }
+  
+  .dail-pad {
+    background-color: white;
+    width: 320px;
+    padding: 20px;
+    margin: 0px auto;
+    height: 500px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+  
+  #output {
+    font-family: "Exo";
+    font-size: 2rem;
+    height: 60px;
+    font-weight: bold;
+    color: #1976d2;
+  }
+  
+  /* #enter {
+    display:flex;
+    background-color: #669cbb;
+  
+   
+    color: white;
+    border-radius: 4px;
+    float: left;
+    cursor: pointer;
+  } */
+  
+  .botrow {
+    margin: 0 auto;
+    width: 280px;
+    clear: both;
+    text-align: center;
+    font-family: 'Exo';
+  }
+  
+  .digit:active,
+  .dig:active {
+    background-color: #faf5f5;
+  }
+  
+  #call:hover {
+    background-color: #81c784;
+  }
+  
+  .dig {
+    float: left;
+    padding: 10px 20px;
+    margin: 10px;
+    width: 30px;
+    cursor: pointer;
+  }
+  .enter{
+    background-color: #1976d2;
+    padding: 15px 40px;
+    margin: 10px;
+    border-radius: 20px;
+    color: white;
+    float: left;
+  }
+  .input{
+    padding: 15px 40px 15px 40px;
+    border-radius: 20px;
+    color: black;
+  
+  }
+  h1{
+    margin-top: -50px;
+  }

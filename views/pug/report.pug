@@ -10,9 +10,14 @@ head
     h1 DV REPORT
   .price
     div.parkingprice
+      p shs #{parkingPrices}
     div.batteryprice
+      p shs #{batteryPrices}
     div.tireprice
+      p shs #{tirePrices}
     div.dailyprice
+      p shs #{allPrices}
+  
 
 table.table()
   thead.table-dark
@@ -25,6 +30,8 @@ table.table()
       th(scope='col') Vehicle color
       th(scope='col') Date
       th(scope='col') Time
+      th(scope='col') Service
+      th(scope='col') Price
       th(scope='col') Delete
       th(scope='col') Edit
      
@@ -40,6 +47,8 @@ table.table()
         td #{client.vehiclecolor}
         td #{client.date}
         td #{client.time}
+        td #{client.service}
+        td #{client.price}
         td
           form(action="/api/report/delete" method="POST")
             input(type="hidden" name="id" value=client._id)

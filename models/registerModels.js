@@ -27,6 +27,12 @@ const ParkingSchema = new mongoose.Schema ({
     time:{
         type : String
     },
+    service:{
+        type : String
+    },
+    price:{
+        type : String
+    }
     
    
    

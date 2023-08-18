@@ -30,6 +30,10 @@ router.get('/services', (req, res)=>{
 router.get('/tab', (req, res)=>{
     res.render('tab.pug')
 });
+// receipt route
+router.get('/receipt', (req, res)=>{
+    res.render('receipt.pug')
+});
 
 
 

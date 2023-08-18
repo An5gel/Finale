@@ -1,0 +1,59 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  // <link rel="stylesheet" href="./set/bootstrap/css">
+  link(href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet')
+  link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet')
+  link(rel='stylesheet' href='../css/tab.css')
+  title Document
+.container.dail-pad
+  #output
+  .row
+    h1 DV PARKING
+    input#input1.input(type='text' name='input1' placeholder='Enter Passcode')
+    br
+    br
+    #one.digit
+      span#pcode 1
+    #two.digit
+      span.pcode 2
+      .sub ABC
+    #three.digit
+      span.pcode 3
+      .sub DEF
+  .row
+    #four.digit
+      span.pcode 4
+      .sub GHI
+    #five.digit
+      span.pcode 5
+      .sub JKL
+    .digit
+      span.pcode 6
+      .sub MNO
+  .row
+    .digit
+      span.pcode 7
+      .sub PQRS
+    .digit
+      span.pcode 8
+      .sub TUV
+    .digit
+      span.pcode 9
+      .sub WXYZ
+  .row
+    .digit
+      span.pcode *
+    .digit
+      span.pcode 0
+    .digit
+      span.pcode #
+  button.enter CANCEL
+  button.enter ENTER
+  //
+    <div class="botrow"><i class="fa fa-star-o dig" aria-hidden="true"></i>
+    <div id="enter"><i class="fa fa-phone"aria-hidden="true" ></i>ENTER</div>
+    <i class="fa fa-long-arrow-left dig" aria-hidden="true"></i>
+    </div>
+script(src='../js/tab.js')

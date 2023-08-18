@@ -148,4 +148,6 @@ tr:hover td{
   flex-direction: row;
   justify-content:flex-end;
   margin: 10px;
+  font-size: 10px;
+  font-family: tahoma;
 }

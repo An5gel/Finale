@@ -4,11 +4,11 @@ const Validate = ()=>{
     let phone = document.register.telephone
     let ninNumber = document.register.ninnumber
     let carNumber = document.register.carnumber
-    let vehicleModel = document.register.vehiclemodel
-    let vehiclecolor = document.register.vehiclecolor
-    let date = document.register.date
-    let time = document.register.time
-    let
+    // let vehicleModel = document.register.vehiclemodel
+    // let vehiclecolor = document.register.vehiclecolor
+    // let date = document.register.date
+    // let time = document.register.time
+    
    
 
 
@@ -17,7 +17,7 @@ const Validate = ()=>{
     let cnumbererror = document.getElementById("cnumbererror")
     let ninNumberError = document.getElementById("ninnumberError")
     let carnumError = document.getElementById("carnumError")
-    let vColorError = document.getElementById("vColorError")
+    // let vColorError = document.getElementById("vColorError")
   
 
     //validating first name inputs
@@ -47,7 +47,7 @@ const Validate = ()=>{
       } else {
         firstName.style.border = "2px solid green";
         errorfirstName.textContent = "";
-        telephone.focus();
+        phone.focus();
       }
 
    
@@ -60,20 +60,28 @@ const Validate = ()=>{
         return false
     }
 
-        // let phoneRegex = /^\+256\d{9}$/;
-        let phoneRegex = /^[+][2][5][6][0-9]{9}$;/;
-
+    // let phoneRegex = /^[+][2][5][6][0-9]{9}$;/;
+    
+    let phoneRegex = /^\+256\d{9}$/;
     if(!phoneRegex.test(phone.value)){
         phone.style.border = "2px solid red";
         cnumbererror.textContent = "Enter a valid number starting with +256";
         // //styling error
          cnumbererror.style = "color: red; font-size:11px; font-family: Helevetica,Arial;";
         // //focus cursor
-       type.focus();
-        return false;
+      return false;
+        
+    }else {
+      phone.style.border = "2px solid green";
+      cnumbererror.textContent = "";
+       ninNumber.focus();
     }
-
-    // validting NIN number
+    // const ninRegex = /^CF([a-zA-Z0-9]{12})+$/;
+    // const ninRegex2 = /^CM([a-zA-Z0-9]{12})+$/;
+    let ninNumberRegex = /^CF([a-zA-Z0-9]{12})+$/;
+    let ninNumberRegex2 = /^CM([a-zA-Z0-9]{12})+$/;
+      
+    // validating NIN number
     if (ninNumber.value == "") {
               ninNumber.style.border = "1px solid red";
               ninNumberError.textContent = "ninNumber is required";
@@ -82,54 +90,42 @@ const Validate = ()=>{
               ninNumber.focus();
               return false;
             }
-            let ninNumberRegex = /^CF([a-zA-Z0-9]{12}+$)/;
-      
-            if (!ninNumber.value.match(ninNumberRegex)) {
+           
+            else if (!(ninNumber.value.match(ninNumberRegex) || ninNumber.value.match(ninNumberRegex2))) {
               ninNumber.style.border = "1px solid red";
               ninNumberError.textContent = "ninNumber should be valid";
               ninNumberError.style =
                 "color: red; font-size:11px; font-family:helvetica,Arial,sans-serif;";
               ninNumber.focus();
               return false;
+            }else {
+              ninNumber.style.border = "2px solid green";
+              ninNumberError.textContent = "";
+            carNumber.focus();
             }
-      
-            if (ninNumber.value == "") {
-              ninNumber.style.border = "1px solid red";
-              ninNumberError.textContent = "ninNumber is required";
-              ninNumberError.style =
-                "color: red; font-size:11px; font-family:helvetica,Arial,sans-serif;";
-              ninNumber.focus();
-              return false;
-            }
-            let ninNumberRegex2 = /^CM([a-zA-Z0-9]{12}+$)/;
-      
-            if (!ninNumber.value.match(ninNumberRegex)) {
-              ninNumber.style.border = "1px solid red";
-              ninNumberError.textContent = "ninNumber should be valid";
-              ninNumberError.style =
-                "color: red; font-size:11px; font-family:helvetica,Arial,sans-serif;";
-              ninNumber.focus();
-              return false;
-            
-      }
-      
-    //validating number plate
-    if(carNumber.value == ""){
+       
+     //validating number plate       
+      //const carNumberRegex = /^(UA|UB)[A-Z][A-Z0-9]{0,4}[A-Z]$/;
+      const carNumberRegex = /^U[A-Za-Z0-9]{1,5}[A-Z]$/;
+    
+    if(carNumber.value === ""){
+      carNumber.style.border = "2px solid red" 
+      carnumError.textContent ="number plate can't be empty"
+      carnumError.style = "color: red; font-size:11px; font-family: Helvetica,arial;";
+      carNumber.focus()
+      return false
+    }
+    else if(!carNumber.value.match(carNumberRegex)){
         carNumber.style.border = "2px solid red" 
         carnumError.textContent ="All number plates begin with U"
         carnumError.style = "color: red; font-size:11px; font-family: Helvetica,arial;";
         carNumber.focus()
         return false
-    }else if(carNumber.value.length == 7){
-        carNumber.style.border = "2px solid red" 
-        carnumError.textContent ="Characters not greater than 7"
-        carnumError.style = "color: red; font-size:11px; font-family: Helvetica,arial;";
-        carNumber.focus()
-        return false
-    }else {
+    
+    }else{
        carNumber.style.border = "2px solid green" 
         carnumError.textContent =""
-        vehiclecolor.focus()
+       
     }
      
 //     //validating vehicle color

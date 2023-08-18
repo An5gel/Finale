@@ -34,36 +34,36 @@ head
           button#btn.btn.btn-outline-primary(type='button' onclick="location.href = 'signup';")
               | Back
     .register
-      form(name='registerform' action='/api/regregister' onsubmit='return Validate();' method='POST')
+      form(name='register' action='/api/regregister' onsubmit="return Validate();" method='POST')
         #title
-          h3  REGISTER
+        h3  PARKING REGISTER
         img(src='/images/truck.jpeg' alt='')
         .form.row.g-3
           .col-md-12
-            label.form-label(for='firstname') Driver&apos;s Name
-            input#firstname.form-control(type='text' name='firstname')
+            label.form-label(for='firstname') Driver&apos;s Name*
+            input#firstname.form-control(type='text' name='firstname' )
             span#dnameerror
           .col-md-12
-            label.form-label(for='telephone') Phone
-            input#telephone.form-control(type='text' name='telephone')
+            label.form-label(for='telephone') Phone*
+            input#telephone.form-control(type='text'  name='telephone')
             span#cnumbererror
             .col-md-6
-            label.form-label(for='ninnumber') NIN Number
+            label.form-label(for='ninnumber') NIN Number*
             input#ninnumber.form-control(type='alpha numeric' name='ninnumber')
-            span#ninnumError
+            span#ninnumberError
           .col-md-6
-            label.form-label(for='carnumber') Number plate
+            label.form-label(for='carnumber') Number plate*
             input#carnumber.form-control(type='alpha numeric' name='carnumber')
             span#carnumError
           .col-md-6
-            label.form-label(for='vehiclemodel') Vehicle model
+            label.form-label(for='vehiclemodel') Vehicle model*
             select#inputState.form-select(name='vehiclemodel')
               option(selected='') Choose...
               option(value='Toyota') Toyota
               option(value='Rangerover') Rangerover
             span#modelError
           .col-md-6
-            label.form-label(for='vehiclecolor') Vehicle Color
+            label.form-label(for='vehiclecolor') Vehicle Color*
             select#inputState.form-select(name='vehiclecolor')
               option(selected='') Choose...
               option(value='Silver') Silver
@@ -73,11 +73,29 @@ head
               option(value='Blue') Blue
             span#vColorError
           .col-md-3
-            label.form-label(for='date') Date
+            label.form-label(for='date') Date*
             input#exampleInputDate1.form-control(type='date' name='date')
           .col-md-3
-            label.form-label(for='exampleInputTime1') Time
+            label.form-label(for='exampleInputTime1') Time*
             input#exampleInputTime1.form-control(name='time')
+          .col-md-6
+            label.form-label(for='service') Service*
+            select#inputState.form-select(name='service')
+              option(selected='') Choose...
+              option(value='Day-park') Day-park
+              option(value='Night-park') Night-park
+              option(value='Less than 3hrs') Less than 3hrs
+            span#serviceError
+          .col-md-6
+            label.form-label(for='Price') Price*
+            select#inputState.form-select(name='price')
+              option(selected='') Choose...
+              option(value='5000') 5000 
+              option(value='3000') 3000
+              option(value='2000') 2000
+              option(value='1000') 1000
+              
+            span#priceError
           .col-12
             button.ton-b.btn.btn-primary(type='submit' onsubmit="location.href='services'") SUBMIT
   script(src='/js/formvalidation.js')

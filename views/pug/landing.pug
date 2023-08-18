@@ -6,7 +6,10 @@ head
   link(rel='stylesheet' href='/css/landing.css')
   title DV parking
 .container-fluid
-  .row
+ .row
+    video.background-clip(autoplay loop muted plays-inline  type="video/mp4")
+      source(src="https://cdn.dribbble.com/uploads/39417/original/49dbf46eae15d227fc95a69cee31251e.mp4?1657824906") 
+        
     nav.navbar.navbar-expand-lg.my-navbar
       .container-fluid
         a.navbar-brand(href='#') DV PARKING
@@ -16,38 +19,24 @@ head
           ul.navbar-nav.me-auto.mb-2.mb-lg-0
             li.nav-item
               a.nav-link.active(aria-current='page' href='#') Home
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='services') Services
           .buts
             button#btn.btn-p(type='button' onclick="location.href = 'login';")
               | Login
             button#btn-pp.btn-p(type='button' onclick="location.href = 'signup';")
               | Sign up
-    .main.card-body.image-body
-      .slide-container
-        span#slider-span1.slider-span
-        span#slider-span2.slider-span
-        span#slider-span3.slider-span
-        .image-slider
-          #slide-1.card.slide-div
-            img#img1.img(src='../images/tire.jpeg' alt='...')
-            .card-body
-              a(href='tire')
-                h5.card-title.title TIRE CLINIC
-              p.card-text.text For all your tire solutions.
-            a#button-1.button(href='#slider-span1')
-          #slide-1.card.slide-div
-            img#img2.img(src='../images/img2.jpeg' alt='...')
-            .card-body
-              a(href='parking')
-                h5.card-title.title PARKING
-              p.card-text.text We define space.
-            a#button-1.button(href='#slider-span2')
-          #slide-3.card.slide-div
-            img#img3.img(src='../images/bat.jpeg' alt='...')
-            .card-body
-              a(href='battery')
-                h5.card-title.title BATTERY HIRE
-              p.card-text.text Need battery urgently, we got you.
-            a#button-3.button(href='#slider-span3')
-    .footer
-      h4 Your better parking choice
-script(src='../set/bootstrap/js')
+    .main
+     .register
+      .row
+        #text.dvtext.col-md-6
+          h1 DV PARKING
+          p For all your vehicle solutions
+ 
+        .img.col-md-6.dvimg
+          img(src='/images/happy.jpeg' alt='')
+          p#imgpara Better choices, Happy customers
+          
+      .clause
+        h4 Your better parking choice
+script(src='')

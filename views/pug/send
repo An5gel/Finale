@@ -1,0 +1,32 @@
+You  to  Everyone 5:15 PM
+const amp = await Parker.findOne({
+            telephone:req.body.telephone
+        })
+        console.log(amp);
+
+Refactory  to  Everyone 5:23 PM
+route.post("/parker", async (req, res) => {
+  const emp = await Parker.findOne({
+    telephone: req.body.telephone,
+  });
+
+  req.session.user.parker = emp;
+});
+
+route.get("/parker", async (req, res) => {
+  const data = req.session.user.parker;
+  // Render the pug file that has checkboxes for parking.
+  // Render it with data from the db
+  res.render("pugfile", { data: data });
+});
+
+// ****************************************************************This Rout can be in a different route file
+// When posting infromation from the parking pug file to db
+route.post("/sendData", async (req, res) => {
+  const id = req.session.user.parker.id;
+  // Extra information from the pug file to the database
+  const service = req.body.service;
+  const price = req.body.price;
+  // Updating the database
+  await Park.findOneAndUpdate(id, service, price);
+});

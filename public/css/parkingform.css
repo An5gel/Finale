@@ -18,9 +18,9 @@ body{
 }
 
 .register{
-    height: 500px;
+    height: 600px;
     width: 1000px;
-    margin: 50px 100px;
+    margin: 10px 100px;
     border: 1px solid black;
     padding: 0px;
     border-radius: 20px;
@@ -34,7 +34,7 @@ body{
 }
 .form{
     margin-bottom: 0px;
-    margin-top: -50px;
+    margin-top: -115px;
     margin-right: 0px;
     padding: 20px;
     float: right;
@@ -54,7 +54,7 @@ img{
     border-radius: 20px;
    
 }
-#title{
+#title, h3{
     color: #fff;
     padding: 10px; 
     align-self: center;  
