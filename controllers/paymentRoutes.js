@@ -11,10 +11,13 @@ router.get("/report", async(req, res)=>{
         let items = await Parker.find();
         let price = await Parker.aggregate([
             {"$group": {_id: "$all",
-        totalPrice:{$avg: "$price"}
+        totalPrice:{$sum: "$price"},
+        
+    },
        
-    }}
+    }
 ])
+// console.log(price[0].totalPrice)
 res.render("report.pug", {Parker: items, allPrices:price[0].totalPrice});       
  }
     catch(error){

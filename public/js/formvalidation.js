@@ -136,8 +136,26 @@ const Validate = ()=>{
 //        Date.focus()
 //         return false
 //     }     
- }    
+} 
+ 
+ 
+const fee = ()=>{ 
 
+  const cartype = document.getElementById('cartype');
+  const service = document.getElementById('service');
+  const price = document.getElementById('price');
+  const compareButton = document.getElementById('price');
+
+  compareButton.addEventListener('click', () => {
+    if (cartype.value='truck' === service.value='Day-park'){
+      return price.value = 3000;
+    }
+     else {
+      result.value = 'Fields are not equal';
+    }
+  });
+
+};
 
 
 
@@ -146,7 +164,25 @@ const Validate = ()=>{
    
 
    
-   
+   // doctype html
+  // html
+  //   head
+  //     title Example Pug Template
+  //   body
+  //     h1 Compare and Put Example
+  
+  //     label(for='field1') Field 1:
+  //     input#field1(type='text')
+  
+  //     label(for='field2') Field 2:
+  //     input#field2(type='text' )
+  
+  //     label(for='result') Result:
+  //     input#result(type='text' readonly)
+  
+      // button#compare-button Compare and Put
+  
+  //     script.  
    
     
 

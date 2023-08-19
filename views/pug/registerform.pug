@@ -78,7 +78,18 @@ head
           .col-md-3
             label.form-label(for='exampleInputTime1') Time*
             input#exampleInputTime1.form-control(name='time')
-          .col-md-6
+          .col-md-4
+            label.form-label(for='cartype') CarType 
+            select#inputState.form-select(name='cartype')
+              option(selected='') Choose...
+              option(value='Truck') Truck
+              option(value='Personal car(5seaters)') Personal car(5seaters)
+              option(value='Personal car(more than 5seaters)') Personal car(more than 5seaters)
+              option(value='Taxi') Taxi
+              option(value='Coaster') Coaster
+              option(value='Boda') Boda
+            span#serviceError
+          .col-md-4
             label.form-label(for='service') Service*
             select#inputState.form-select(name='service')
               option(selected='') Choose...
@@ -86,8 +97,8 @@ head
               option(value='Night-park') Night-park
               option(value='Less than 3hrs') Less than 3hrs
             span#serviceError
-          .col-md-6
-            label.form-label(for='Price') Price*
+          .col-md-4
+            label.form-label.btn.btn-price(for='Price') Price*
             select#inputState.form-select(name='price')
               option(selected='') Choose...
               option(value='5000') 5000 

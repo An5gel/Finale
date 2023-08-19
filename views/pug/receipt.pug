@@ -2,18 +2,37 @@ doctype html
 head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  link(rel='stylesheet' href='../css/reciept.css')
+  llink(rel='stylesheet' href='/bootstrap/set/bootstrap/css')
+  link(rel='stylesheet' href='/css/receipt.css')
   title Document
-.text
-  p XXXBARCODEXXXX
-  h1 DV PARKING
-  h4 Your better parking choice
-  h2 RECEIPT 001
-  h1 12 : 06 pm
-  p 30/June/2023
-  h4 Services
-  p Night Park  Car Number 5000
-  h2 Paid : shs 5000
-  p VAT : 18%
-  p Thank you Drive safely
-  p XXXXBARCODEXXXX
+.container-fluid
+  .row
+    nav.navbar.navbar-expand-lg.my-navbar
+      .container-fluid
+        a.navbar-brand(href='#') DV REPORT
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.me-auto.mb-2.mb-lg-0
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='landing') Home
+          .buts
+            button#buts.btn.btn-outline-success(type='button' onclick="location.href = 'receipt';") Print
+            button.btn.btn-outline-primary(type='button' onclick="location.href = 'previous';")
+              | Back
+            
+  .text
+    p XXXBARCODEXXXX
+    h1 DV PARKING
+    h4 Your better parking choice
+    h2 RECEIPT 001
+    h1 12 : 06 pm
+    p 30/June/2023
+    h4 Services
+    p Night Park  Car Number 5000
+    h2 Paid : shs 5000
+    p VAT : 18%
+    p Thank you Drive safely
+    p XXXXBARCODEXXXX
+
+script(src='/bootstrap/set/bootstrap.js')    

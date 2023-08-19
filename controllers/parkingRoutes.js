@@ -72,10 +72,10 @@ router.get("/form/edit/:id", async (req, res)=>{
         console.log(error)
     }
 });
-router.get("/report/edit/", async (req, res)=>{
+router.post("/report/edit/", async (req, res)=>{
     try{
         await Parker.findOneAndUpdate({_id:req.query.id},req.body);
-        res.render("/form")
+        res.redirect("/api/report")
     }
     catch(error){
         res.status(400).send("could not find clients  in database")

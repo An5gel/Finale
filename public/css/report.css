@@ -12,6 +12,16 @@ body{
   backdrop-filter: blur(5px);
     
 }
+#buts{
+  margin: 3px;
+}
+.my-navbar{   
+  color: #121111;
+  background-color:  #dff6ff;
+}
+.navbar-brand,.nav-item{
+  color: #0f0e0e;
+}
 table{
   width: 100%;
 }

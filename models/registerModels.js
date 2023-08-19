@@ -27,6 +27,9 @@ const ParkingSchema = new mongoose.Schema ({
     time:{
         type : String
     },
+    cartype:{
+        type : String
+    },
     service:{
         type : String
     },
