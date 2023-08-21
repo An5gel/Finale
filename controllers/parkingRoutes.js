@@ -21,7 +21,7 @@ router.post("/regregister", async (req, res) => {
         const client = new Parker(req.body);
         await client.save();
         console.log(req.body);
-        res.render("report.pug"); 
+        res.redirect("/api/report"); 
     } catch(error){
         res.status(400).render("registerform.pug")
         console.log(error);
@@ -41,7 +41,7 @@ router.post("/regregister", async (req, res) => {
     router.get("/report", async(req, res)=>{
         try{
             let items = await Parker.find();
-            res.render("report.pug", {persons: items});
+            res.render("report.pug",{persons: items});
         }
         catch(error){
             console.log(error)
