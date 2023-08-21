@@ -13,13 +13,11 @@ router.get("/report", async(req, res)=>{
             {"$group": {_id: "$all",
         totalPrice:{$sum: "$price"},
         
-    },
-       
-    }
+    }}
 ])
 // console.log(price[0].totalPrice)
 res.render("report.pug", {Parker: items, allPrices:price[0].totalPrice});       
- }
+}
     catch(error){
         console.log(error)
        return res.status(400).send({message: "sorry could not retrieve employees"})
