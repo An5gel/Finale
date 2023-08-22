@@ -41,7 +41,11 @@ router.post("/regregister", async (req, res) => {
     router.get("/report", async(req, res)=>{
         try{
             let items = await Parker.find();
-            res.render("report.pug",{persons: items});
+            let price = await Parker.aggregate([
+                { $group: { _id: "$all", totalPrice: { $sum: "$price" } } },
+              ]);
+              console.log(price);
+              res.render("report.pug", { persons: items, allPrices: price[0].totalPrice });
         }
         catch(error){
             console.log(error)

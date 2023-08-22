@@ -106,7 +106,7 @@ const Validate = ()=>{
        
      //validating number plate       
       //const carNumberRegex = /^(UA|UB)[A-Z][A-Z0-9]{0,4}[A-Z]$/;
-      const carNumberRegex = /^U[A-Za-Z0-9]{1,5}[A-Z]$/;
+  const carNumberRegex = /^U[A-Za-Z0-9]{1,5}[A-Z]$/;
     
     if(carNumber.value === ""){
       carNumber.style.border = "2px solid red" 
@@ -139,23 +139,23 @@ const Validate = ()=>{
 } 
  
  
-const fee = ()=>{ 
+// const fee = ()=>{ 
 
-  const cartype = document.getElementById('cartype');
-  const service = document.getElementById('service');
-  const price = document.getElementById('price');
-  const compareButton = document.getElementById('price');
+//   const cartype = document.getElementById('cartype');
+//   const service = document.getElementById('service');
+//   const price = document.getElementById('price');
+//   const compareButton = document.getElementById('price');
 
-  compareButton.addEventListener('click', () => {
-    if (cartype.value='truck' === service.value='Day-park'){
-      return price.value = 3000;
-    }
-     else {
-      result.value = 'Fields are not equal';
-    }
-  });
+//   compareButton.addEventListener('click', () => {
+//     if (cartype.value='truck' === service.value='Day-park'){
+//       return price.value = 3000;
+//     }
+//      else {
+//       result.value = 'Fields are not equal';
+//     }
+//   });
 
-};
+// };
 
 
 

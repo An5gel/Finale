@@ -19,20 +19,16 @@ head
               a.nav-link.active(aria-current='page' href='landing') Home
           .buts
             button#buts.btn.btn-outline-success(type='button' onclick="location.href = 'receipt';") Print
-            button.btn.btn-outline-primary(type='button' onclick="location.href = 'previous';")
+            button#but-p.btn.btn-outline-primary(type='button' onclick="location.href = 'form';")
               | Back
+            button.btn.btn-outline-primary(type='button' onclick="location.href = 'logout';")
+              | Logout   
             
   
     
   .price
-    div.parkingprice
-      p  #{parkingPrices}
-    div.batteryprice
-      p  #{batteryPrices}
-    div.tireprice
-      p  #{tirePrices}
     div.dailyprice
-      p  #{allPrices}
+      p  shs #{allPrices}
   
 
 table.table()

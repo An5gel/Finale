@@ -17,6 +17,7 @@ const signupRoutes = require('./controllers/signupRoutes')
 const loginRoutes = require('./controllers/loginRoutes')
 const tabRoutes = require('./controllers/tabRoutes')
 
+
 // calling and setting express session
 const expressSession = require("express-session")({
   secret: "secret", 
@@ -56,6 +57,7 @@ app.use('/api', parkingRoutes)
 app.use('/api', signupRoutes)
 app.use('/api', loginRoutes)
 app.use('/api', tabRoutes)
+
 
 // running the server on a specific port(3000)
 // this is always the last line in the server file

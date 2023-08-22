@@ -34,6 +34,10 @@ router.get('/tab', (req, res)=>{
 router.get('/receipt', (req, res)=>{
     res.render('receipt.pug')
 });
+// tyreform routes
+router.get('/tyreform', (req, res)=>{
+    res.render('tireform.pug')
+});
 
 
 

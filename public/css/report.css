@@ -15,6 +15,9 @@ body{
 #buts{
   margin: 3px;
 }
+#but-p{
+  margin: 3px;
+}
 .my-navbar{   
   color: #121111;
   background-color:  #dff6ff;
