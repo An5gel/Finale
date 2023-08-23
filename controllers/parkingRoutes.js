@@ -72,7 +72,7 @@ router.get("/form/edit/:id", async (req, res)=>{
         res.render("editregister", {client:emp})
     }
     catch(error){
-        res.status(400).send("could not find employee in database")
+        res.status(400).send("could not find client in database")
         console.log(error)
     }
 });

@@ -15,7 +15,7 @@ const landingRoutes = require('./controllers/landingRoutes')
 const parkingRoutes = require('./controllers/parkingRoutes')
 const signupRoutes = require('./controllers/signupRoutes')
 const loginRoutes = require('./controllers/loginRoutes')
-const tabRoutes = require('./controllers/tabRoutes')
+const tyreRoutes = require('./controllers/tyreRoutes')
 
 
 // calling and setting express session
@@ -56,7 +56,7 @@ app.use('/api', landingRoutes)
 app.use('/api', parkingRoutes)
 app.use('/api', signupRoutes)
 app.use('/api', loginRoutes)
-app.use('/api', tabRoutes)
+app.use('/api', tyreRoutes)
 
 
 // running the server on a specific port(3000)

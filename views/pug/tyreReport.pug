@@ -10,7 +10,7 @@ head
   .row
     nav.navbar.navbar-expand-lg.my-navbar
       .container-fluid
-        a.navbar-brand(href='#') PARKING REPORT
+        a.navbar-brand(href='#')  TYRECLINIC REPORT
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
           span.navbar-toggler-icon
         #navbarSupportedContent.collapse.navbar-collapse
@@ -19,7 +19,7 @@ head
               a.nav-link.active(aria-current='page' href='landing') Home
           .buts
             
-            button#but-p.btn.btn-outline-primary(type='button' onclick="location.href = 'form';")
+            button#but-p.btn.btn-outline-primary(type='button' onclick="location.href = 'tyreform';")
               | Back
             button.btn.btn-outline-primary(type='button' onclick="location.href = 'logout';")
               | Logout   
@@ -34,12 +34,12 @@ head
 table.table()
   thead.table-dark
     tr
-      th(scope='col') Driver's name
+      th(scope='col') Name
       th(scope='col') Phone
-      th(scope='col') Number plate
       th(scope='col') NIN Number
+      th(scope='col') Size
       th(scope='col') Vehicle Model
-      th(scope='col') Vehicle color
+      th(scope='col') Make
       th(scope='col') Date
       th(scope='col') Time
       th(scope='col') Car type
@@ -55,24 +55,24 @@ table.table()
       tr
         td #{client.firstname}
         td #{client.telephone}
-        td #{client.carnumber}
         td #{client.ninnumber}
+        td #{client.size}
         td #{client.vehiclemodel}
-        td #{client.vehiclecolor}
+        td #{client.make}
         td #{client.date}
         td #{client.time}
         td #{client.cartype}
         td #{client.service}
         td #{client.price}
         td
-          form(action="/api/report/delete" method="POST")
+          form(action="/api/tyreReport/delete" method="POST")
             input(type="hidden" name="id" value=client._id)
             button.btn.btn-danger(type="submit") Delete
         td 
-          a.btn.btn-warning(href="/api/form/edit/"+client._id) Edit   
-          a(href=`/api/form/edit/"${client._id}`)    
+          a.btn.btn-warning(href="/api/tyreform/edit/"+client._id) Edit   
+          a(href=`/api/tyreform/edit/"${client._id}`)    
         td 
-          a#buts.btn.btn-outline-success(type='button' href = `receipt/${client._id}`) Print
+          a#buts.btn.btn-outline-success(type='button' href = `tyrereceipt/${client._id}`) Print
   //- else 
     p There are no employees in the database
 script(src='/bootstrap/set/bootstrap/js')

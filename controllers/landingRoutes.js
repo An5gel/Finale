@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
+const Parker = require("../models/registerModels");
+
 // landing page route
 router.get('/landing', (req, res)=>{
     res.render('landing.pug')
@@ -31,13 +33,21 @@ router.get('/tab', (req, res)=>{
     res.render('tab.pug')
 });
 // receipt route
-router.get('/receipt', (req, res)=>{
-    res.render('receipt.pug')
+router.get("/receipt/:id", async (req, res)=>{
+    try{
+        const client = await Parker.findOne({
+            _id:req.params.id
+        })
+        console.log(client)
+        res.render("receipt.pug", {client})
+    }
+    catch(error){
+        res.status(400).send("could not find receipt in database")
+        console.log(error)
+    }
 });
-// tyreform routes
-router.get('/tyreform', (req, res)=>{
-    res.render('tireform.pug')
-});
+
+
 
 
 

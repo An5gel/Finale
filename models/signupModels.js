@@ -15,17 +15,17 @@ const mongoose = require("mongoose");
         type : String,
         trim: true,
     },
-  email:{
+    email:{
          type: String,
           required: true,
      },
-  telephone:{
+    telephone:{
         type : String
     },
     role:{
         type :String
     },
-    branch:{
+    section:{
         type : String,
         
     },
