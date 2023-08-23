@@ -17,9 +17,10 @@ router.get('/employee', (req, res)=>{
 router.post("/regsignup", async (req, res)=>{
    try{
     const register = new Signup(req.body)
+    await register.save();
     console.log(req.body);
     await Signup.register (register,req.body.password);
-    res.render("employee.pug")
+    res.redirect("/api/employee")
    }
    catch(error){
     res.status(400).send({message: "failed to register user"});
