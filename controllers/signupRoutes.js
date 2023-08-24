@@ -26,16 +26,18 @@ router.post("/regsignup", async (req, res)=>{
     console.log(error);
    }
 });
-// router.get("/employee", async(req, res)=>{
-//     try{
-//         let items = await Signup.find();
-//        res.render("employee.pug", {persons: items});
-//     }
-//     catch(error){
-//         console.log(error)
-//        return res.status(400).send({message: "sorry could not retrieve employee"})
-//     }
-// });
+
+router.get("/employee", async(req, res)=>{
+    try{
+        let items = await Signup.find();
+       res.render("employee.pug", {persons: items});
+    }
+    catch(error){
+        console.log(error)
+       return res.status(400).send({message: "sorry could not retrieve employee"})
+    }
+});
+
 // router.post("/employee/delete", async (req, res )=>{
 //     try{
 //         await Parker.deleteOne({_id: req.body.id});

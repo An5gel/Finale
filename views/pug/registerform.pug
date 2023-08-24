@@ -70,7 +70,9 @@ head
               option(value='White') White
               option(value='Black') Black
               option(value='Red') Red
+              option(value='Cream') Cream
               option(value='Blue') Blue
+              option(value='Others') Others
             span#vColorError
           .col-md-3
             label.form-label(for='date') Date*
@@ -107,6 +109,10 @@ head
               option(value='1000') 1000
               
             span#priceError
+          .col-md-12
+            label.form-label(for='employeeId') Employee ID*
+            input#employeeId.form-control(type='text' name='employeeId' value=userID disabled )
+            
           .col-12
             button.ton-b.btn.btn-primary(type='submit' onsubmit="location.href='services'") SUBMIT
   script(src='/js/formvalidation.js')

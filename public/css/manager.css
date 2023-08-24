@@ -1,0 +1,17 @@
+body{
+    background-color: #5d8bf4;
+}
+.my-navbar{   
+    /* overflow:hidden; */
+    color: #121111;
+    background-color:  #dff6ff;
+}
+.navbar-brand,.nav-item{
+    color: #0f0e0e;
+}
+#but-p{
+    margin: 3px;
+}
+button:hover{
+     background-color: #051367;
+}

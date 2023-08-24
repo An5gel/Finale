@@ -105,8 +105,8 @@ const Validate = ()=>{
             }
        
      //validating number plate       
-      //const carNumberRegex = /^(UA|UB)[A-Z][A-Z0-9]{0,4}[A-Z]$/;
-  const carNumberRegex = /^U[A-Za-Z0-9]{1,5}[A-Z]$/;
+  // const carNumberRegex = /^(UA|UB)[A-Z][A-Z0-9]{0,4}[A-Z]$/;
+  const carNumberRegex = /^U[A-Za-z0-9]{1,5}[A-Z]$/;
     
     if(carNumber.value === ""){
       carNumber.style.border = "2px solid red" 
@@ -117,12 +117,13 @@ const Validate = ()=>{
     }
     else if(!carNumber.value.match(carNumberRegex)){
         carNumber.style.border = "2px solid red" 
-        carnumError.textContent ="All number plates begin with U"
+        carnumError.textContent ="put valid number plate"
         carnumError.style = "color: red; font-size:11px; font-family: Helvetica,arial;";
         carNumber.focus()
         return false
     
-    }else{
+    }
+    else{
        carNumber.style.border = "2px solid green" 
         carnumError.textContent =""
        
@@ -136,53 +137,53 @@ const Validate = ()=>{
 //        Date.focus()
 //         return false
 //     }     
-} 
+ } 
  
  
-// const fee = ()=>{ 
+// // const fee = ()=>{ 
 
-//   const cartype = document.getElementById('cartype');
-//   const service = document.getElementById('service');
-//   const price = document.getElementById('price');
-//   const compareButton = document.getElementById('price');
+// //   const cartype = document.getElementById('cartype');
+// //   const service = document.getElementById('service');
+// //   const price = document.getElementById('price');
+// //   const compareButton = document.getElementById('price');
 
-//   compareButton.addEventListener('click', () => {
-//     if (cartype.value='truck' === service.value='Day-park'){
-//       return price.value = 3000;
-//     }
-//      else {
-//       result.value = 'Fields are not equal';
-//     }
-//   });
+// //   compareButton.addEventListener('click', () => {
+// //     if (cartype.value='truck' === service.value='Day-park'){
+// //       return price.value = 3000;
+// //     }
+// //      else {
+// //       result.value = 'Fields are not equal';
+// //     }
+// //   });
 
-// };
+// // };
 
 
-
-   
-   
-   
 
    
-   // doctype html
-  // html
-  //   head
-  //     title Example Pug Template
-  //   body
-  //     h1 Compare and Put Example
+   
+   
+
+   
+//    // doctype html
+//   // html
+//   //   head
+//   //     title Example Pug Template
+//   //   body
+//   //     h1 Compare and Put Example
   
-  //     label(for='field1') Field 1:
-  //     input#field1(type='text')
+//   //     label(for='field1') Field 1:
+//   //     input#field1(type='text')
   
-  //     label(for='field2') Field 2:
-  //     input#field2(type='text' )
+//   //     label(for='field2') Field 2:
+//   //     input#field2(type='text' )
   
-  //     label(for='result') Result:
-  //     input#result(type='text' readonly)
+//   //     label(for='result') Result:
+//   //     input#result(type='text' readonly)
   
-      // button#compare-button Compare and Put
+//       // button#compare-button Compare and Put
   
-  //     script.  
+//   //     script.  
    
     
 

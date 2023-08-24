@@ -11,7 +11,17 @@ router.post("/login", passport.authenticate("local",
     req.session.user = req.user
    let loggedinUser = req.session.user.firstname;
    console.log(loggedinUser)
-   res.redirect("/api/services");
+   if(req.session.user.role === "director"){
+            res.render("director.pug")
+        }
+       if(req.session.user.role === "manager"){
+            res.render("manager.pug", {loggedinUser})
+        }
+       if(req.session.user.role === "attendant"){
+            res.render("attendant.pug")
+        }
+    
+  
 });
 
 router.get("/logout", (req, res)=>{

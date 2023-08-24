@@ -8,6 +8,16 @@ router.get('/landing', (req, res)=>{
     res.render('landing.pug')
 });
 
+// manager page route
+router.get('/manager', (req, res)=>{
+    res.render('manager.pug')
+});
+
+// attendant page route
+router.get('/attendant', (req, res)=>{
+    res.render('attendant.pug')
+});
+
 // parking page route
 router.get('/parking', (req, res)=>{
     res.render('parking.pug')
@@ -30,7 +40,10 @@ router.get('/services', (req, res)=>{
 
 // tab route
 router.get('/tab', (req, res)=>{
-    res.render('tab.pug')
+    req.session.user = req.user
+    if (req.session.user.role === 'manager'){
+    res.render('tab.pug')}
+    else{res.render("landing.pug")}
 });
 // receipt route
 router.get("/receipt/:id", async (req, res)=>{

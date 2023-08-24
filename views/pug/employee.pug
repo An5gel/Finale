@@ -38,9 +38,7 @@ table.table()
       th(scope='col') Email
       th(scope='col') Phone
       th(scope='col') Role
-      th(scope='col') Date
       th(scope='col') Section
-      th(scope='col') Password
       th(scope='col') Delete
       th(scope='col') Edit
       
@@ -56,7 +54,6 @@ table.table()
         td #{client.telephone}
         td #{client.role}
         td #{client.section}
-        td #{client.password}
         td          
             form(action="/api/employee/delete" method="POST")
             input(type="hidden" name="id" value=client._id)

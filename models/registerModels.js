@@ -35,7 +35,11 @@ const ParkingSchema = new mongoose.Schema ({
     },
     price:{
         type : Number
-    }
+    },
+    employeeId:{
+        type : String,
+        required: true
+    },
     
    
    

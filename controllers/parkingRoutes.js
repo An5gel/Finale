@@ -12,7 +12,10 @@ router.get('/parking', (req, res)=>{
 
 // parking page route
 router.get('/form', (req, res)=>{
-    res.render('registerform.pug')
+    req.session.user = req.user
+   let UserID = req.session.user.username;
+   console.log(UserID)
+    res.render('registerform.pug',{userID:UserID})
 });
 
 router.post("/regregister", async (req, res) => {
