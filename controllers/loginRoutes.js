@@ -20,6 +20,9 @@ router.post("/login", passport.authenticate("local",
        if(req.session.user.role === "attendant"){
             res.render("attendant.pug")
         }
+       if(req.session.user.role === "cashier"){
+            res.render("cashier.pug")
+        }
     
   
 });

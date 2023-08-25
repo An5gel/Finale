@@ -34,34 +34,34 @@ head
           button#btn.btn.btn-outline-primary(type='button' onclick="location.href = 'signup';")
               | Back
     .register
-      form(name='tyreregister' action='#'  method='POST')
+      form(name='tyreregister' action='/api/tyreReport/edit?id='+client._id  method='POST')
         #title
         h3  TYRE CLINIC REGISTER
         img(src='/images/ptire.jpeg' alt='')
         .form.row.g-3
           .col-md-6
             label.form-label(for='firstname')  Name*
-            input#firstname.form-control(type='text' name='firstname' )
+            input#firstname.form-control(type='text' name='firstname' value=client.firstname)
             span#dnameerror
           .col-md-6
             label.form-label(for='telephone') Phone*
-            input#telephone.form-control(type='text'  name='telephone')
+            input#telephone.form-control(type='text'  name='telephone' value=client.telephone)
             span#cnumbererror
           
           .col-md-6
             label.form-label(for='size') Size*
-            input#carnumber.form-control(type='text' name='size')
+            input#carnumber.form-control(type='text' name='size' value=client.size)
             span#carnumError
           .col-md-6
             label.form-label(for='vehiclemodel') Vehicle model*
-            select#inputState.form-select(name='vehiclemodel')
+            select#inputState.form-select(name='vehiclemodel' value=client.vehiclemodel)
               option(selected='') Choose...
               option(value='Toyota') Toyota
               option(value='Rangerover') Rangerover
             span#modelError
           .col-md-6
             label.form-label(for='make') Make*
-            select#inputState.form-select(name='make')
+            select#inputState.form-select(name='make' value=client.make)
               option(selected='') Choose...
               option(value='Bridgestone') Bridgestone
               option(value='Yokohama') Yokohama
@@ -69,14 +69,14 @@ head
             span#vColorError
           .col-md-3
             label.form-label(for='date') Date*
-            input#exampleInputDate1.form-control(type='date' name='date')
+            input#exampleInputDate1.form-control(type='date' name='date' value=client.date)
           .col-md-3
             label.form-label(for='exampleInputTime1') Time*
-            input#exampleInputTime1.form-control(name='time' type="time")
+            input#exampleInputTime1.form-control(name='time' type="time" value=client.time)
         
           .col-md-6
             label.form-label(for='service') Service*
-            select#inputState.form-select(name='service')
+            select#inputState.form-select(name='service' value=client.service)
               option(selected='') Choose...
               option(value='puncture fix') Puncture fix
               option(value='valves') Valves
@@ -84,13 +84,11 @@ head
             span#serviceError
           .col-md-6
             label.form-label(for='Price') Price*
-            select#inputState.form-select(name='price')
+            select#inputState.form-select(name='price' value=client.price)
               option(selected='') Choose...
               option(value='5000') 5000 
               option(value='500') 500
             span#priceError
-          .col-md-12
-            input#employeeId.form-control(type='hidden' name='employeeId' value=UserID  )
           .col-12
             button.ton-b.btn.btn-primary(type='submit' onsubmit="location.href='services'") SUBMIT
   script(src='/js/formvalidation.js')

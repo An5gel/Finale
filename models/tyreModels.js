@@ -9,9 +9,7 @@ const TyreSchema = new mongoose.Schema ({
     telephone:{
         type: String
     },
-    ninnumber:{
-        type : String
-    },
+    
     size:{
         type : String
     },
@@ -27,14 +25,17 @@ const TyreSchema = new mongoose.Schema ({
     time:{
         type : String
     },
-    cartype:{
-        type : String
-    },
+    
     service:{
         type : String
     },
     price:{
         type : Number
+    },
+    employeeId:{
+        type : String,
+        required:true
+
     }
     
    

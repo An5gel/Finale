@@ -9,6 +9,9 @@ const ParkingSchema = new mongoose.Schema ({
     telephone:{
         type: String
     },
+    gender:{
+        type: String
+    },
     ninnumber:{
         type : String
     },

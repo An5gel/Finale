@@ -9,7 +9,7 @@ head
   .row
     nav.navbar.navbar-expand-lg.my-nav
       .container-fluid
-        a.navbar-brand(href='#') DV PARKING
+        a.navbar-brand(href='#') #{loggedinUser}
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
           span.navbar-toggler-icon
         #navbarSupportedContent.collapse.navbar-collapse
@@ -43,11 +43,18 @@ head
             label.form-label(for='firstname') Driver&apos;s Name*
             input#firstname.form-control(type='text' name='firstname' )
             span#dnameerror
-          .col-md-12
+          .col-md-6
             label.form-label(for='telephone') Phone*
             input#telephone.form-control(type='text'  name='telephone')
             span#cnumbererror
-            .col-md-6
+          .col-md-6
+           label.form-label(for='gender') Gender*
+           select#inputState.form-select(name='gender' type='text')
+              option(selected='') 
+              option(value='female') Female
+              option(value='male') Male
+           span#genderError
+          .col-md-12
             label.form-label(for='ninnumber') NIN Number*
             input#ninnumber.form-control(type='alpha numeric' name='ninnumber')
             span#ninnumberError
@@ -58,14 +65,42 @@ head
           .col-md-6
             label.form-label(for='vehiclemodel') Vehicle model*
             select#inputState.form-select(name='vehiclemodel')
-              option(selected='') Choose...
+              option(selected='')
               option(value='Toyota') Toyota
               option(value='Rangerover') Rangerover
             span#modelError
+          .col-md-4
+            label.form-label(for='cartype') CarType 
+            select#inputState.form-select(name='cartype')
+              option(selected='') 
+              option(value='Truck') Truck
+              option(value='Personal car(5seaters)') Personal car(5seaters)
+              option(value='Personal car(more than 5seaters)') Personal car(more than 5seaters)
+              option(value='Taxi') Taxi
+              option(value='Coaster') Coaster
+              option(value='Boda') Boda
+            span#cartypeError
+          .col-md-4
+            label.form-label(for='service') Service*
+            select#inputState.form-select(name='service')
+              option(selected='') 
+              option(value='Day-park') Day-park
+              option(value='Night-park') Night-park
+              option(value='Less than 3hrs') Less than 3hrs
+            span#serviceError
+          .col-md-4
+            label.form-label(for='Price') Price*
+            select#inputState.form-select(name='price' type= "Number")
+              option(selected='') 
+              option(value='5000') 5000 
+              option(value='3000') 3000
+              option(value='2000') 2000
+              option(value='1000') 1000
+            span#priceError
           .col-md-6
             label.form-label(for='vehiclecolor') Vehicle Color*
             select#inputState.form-select(name='vehiclecolor')
-              option(selected='') Choose...
+              option(selected='') 
               option(value='Silver') Silver
               option(value='White') White
               option(value='Black') Black
@@ -79,39 +114,9 @@ head
             input#exampleInputDate1.form-control(type='date' name='date')
           .col-md-3
             label.form-label(for='exampleInputTime1') Time*
-            input#exampleInputTime1.form-control(name='time' type= "time")
-          .col-md-4
-            label.form-label(for='cartype') CarType 
-            select#inputState.form-select(name='cartype')
-              option(selected='') Choose...
-              option(value='Truck') Truck
-              option(value='Personal car(5seaters)') Personal car(5seaters)
-              option(value='Personal car(more than 5seaters)') Personal car(more than 5seaters)
-              option(value='Taxi') Taxi
-              option(value='Coaster') Coaster
-              option(value='Boda') Boda
-            span#serviceError
-          .col-md-4
-            label.form-label(for='service') Service*
-            select#inputState.form-select(name='service')
-              option(selected='') Choose...
-              option(value='Day-park') Day-park
-              option(value='Night-park') Night-park
-              option(value='Less than 3hrs') Less than 3hrs
-            span#serviceError
-          .col-md-4
-            label.form-label.btn.btn-price(for='Price') Price*
-            select#inputState.form-select(name='price' type= "Number")
-              option(selected='') Choose...
-              option(value='5000') 5000 
-              option(value='3000') 3000
-              option(value='2000') 2000
-              option(value='1000') 1000
-              
-            span#priceError
+            input#exampleInputTime1.form-control(name='time' type= "time")  
           .col-md-12
-            label.form-label(for='employeeId') Employee ID*
-            input#employeeId.form-control(type='text' name='employeeId' value=userID disabled )
+            input#employeeId.form-control(type='hidden' name='employeeId' value=UserID  )
             
           .col-12
             button.ton-b.btn.btn-primary(type='submit' onsubmit="location.href='services'") SUBMIT

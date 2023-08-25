@@ -8,6 +8,13 @@ const router = express.Router();
 router.get('/tyreform', (req, res)=>{
     res.render('tireform.pug')
 });
+// tyreform page route
+router.get('/tyreform', (req, res)=>{
+    req.session.user = req.user
+   let UserID = req.session.user.username;
+   console.log(UserID)
+    res.render('tyreform.pug', {UserID})
+});
 
 router.post("/tyreform", async (req, res) => {
     try{
@@ -23,7 +30,14 @@ router.post("/tyreform", async (req, res) => {
 });
 router.get("/tyreReport", async(req, res)=>{
     try{
-        let items = await TyreClients.find();
+        let items= ""
+            req.session.user = req.user
+            let UserID = req.session.user.username;
+            if(req.session.user.role === "attendant"){
+                 items = await TyreClients.find({employeeId: UserID});
+            } else{
+               items = await TyreClients.find();
+            }
         let price = await TyreClients.aggregate([
             { $group: { _id: "$all", totalPrice: { $sum: "$price" } } },
           ]);
@@ -49,7 +63,7 @@ catch(error){
 // how to update data
 router.get("/tyreform/edit/:id", async (req, res)=>{
 try{
-    const emp = await Parker.findOne({
+    const emp = await TyreClients.findOne({
         _id:req.params.id
     })
     res.render("edittyreregister", {client:emp})
@@ -68,6 +82,20 @@ catch(error){
     res.status(400).send("could not find clients  in database")
     console.log(error)
 }
+});
+// tyrereceipt route
+router.get("/tyrereceipt/:id", async (req, res)=>{
+    try{
+        const client = await TyreClients.findOne({
+            _id:req.params.id
+        })
+        console.log(client)
+        res.render("tyrereceipt.pug", {client})
+    }
+    catch(error){
+        res.status(400).send("could not find receipt in database")
+        console.log(error)
+    }
 });
 
 

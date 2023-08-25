@@ -8,26 +8,25 @@ head
 
 //- each client in client
 .text
-  h1 RECEIPT 
+  h1 DOCKVILLE PARKING 
+  h3 Tyre Clinic Reciept
   p 
 
-      h3 Name: #{client.firstname}  
+      p #{client.time}  #{client.date}
       
-      h3 Date: #{client.date}
+      h3  #{client.firstname}
 
-      h3 Time: #{client.time}
-
-      h3 Number plate: #{client.carnumber}
-
-      h3 Phone: #{client.telephone}
-
-      h3 NIN Number: #{client.ninnumber}
-
-      h3 Cartype: #{client.cartype}
+      p Phone: #{client.telephone}
+      
+      p Size: #{client.size}  Make: #{client.make}
 
       h3 Service: #{client.service}
 
-      h3 Price: #{client.price} 
+      h3 Price: #{client.price}
+
+      p Thank you
+      
+      p NB:"Goods once sold are not returnable" 
 
 script(src='/bootstrap/set/bootstrap.js') 
   

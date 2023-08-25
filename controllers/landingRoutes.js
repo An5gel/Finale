@@ -40,12 +40,21 @@ router.get('/services', (req, res)=>{
 
 // tab route
 router.get('/tab', (req, res)=>{
-    req.session.user = req.user
-    if (req.session.user.role === 'manager'){
-    res.render('tab.pug')}
-    else{res.render("landing.pug")}
+    res.render('tab.pug')
 });
-// receipt route
+// cashier route
+router.get('/cashier', (req, res)=>{
+    res.render('cashier.pug')
+});
+
+// // tab route
+// router.get('/tab', (req, res)=>{
+//     req.session.user = req.user
+//     if (req.session.user.role === 'manager'){
+//     res.render('tab.pug')}
+//     else{res.render("landing.pug")}
+// });
+// parkingreceipt route
 router.get("/receipt/:id", async (req, res)=>{
     try{
         const client = await Parker.findOne({
@@ -59,6 +68,7 @@ router.get("/receipt/:id", async (req, res)=>{
         console.log(error)
     }
 });
+
 
 
 

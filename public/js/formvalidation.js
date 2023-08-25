@@ -2,12 +2,16 @@ const Validate = ()=>{
     //picking input field with their names 
     let  firstName = document.register.firstname
     let phone = document.register.telephone
+    let gender = document.register.gender
     let ninNumber = document.register.ninnumber
     let carNumber = document.register.carnumber
-    // let vehicleModel = document.register.vehiclemodel
-    // let vehiclecolor = document.register.vehiclecolor
+    let vehicleModel = document.register.vehiclemodel
+    let vehiclecolor = document.register.vehiclecolor
     // let date = document.register.date
     // let time = document.register.time
+    let cartype = document.register.cartype
+    let service = document.register.service
+    let price = document.register.price
     
    
 
@@ -15,10 +19,14 @@ const Validate = ()=>{
     //picking error fields
     let errorfirstName = document.getElementById("dnameerror");
     let cnumbererror = document.getElementById("cnumbererror")
+    let genderError = document.getElementById("genderError")
     let ninNumberError = document.getElementById("ninnumberError")
     let carnumError = document.getElementById("carnumError")
-    // let vColorError = document.getElementById("vColorError")
-  
+    let vehicleModelError = document.getElementById("modelError")    
+    let vehicleColorError = document.getElementById("vColorError")
+    let cartypeError = document.getElementById("cartypeError")
+    let serviceError = document.getElementById("serviceError")
+    let priceError = document.getElementById("priceError")
 
     //validating first name inputs
     //validating for emptyness
@@ -74,8 +82,24 @@ const Validate = ()=>{
     }else {
       phone.style.border = "2px solid green";
       cnumbererror.textContent = "";
-       ninNumber.focus();
+       gender.focus();
     }
+
+    // validating gender
+    if (gender.value == "") {
+      gender.style.border = "2px solid red";
+      genderError.textContent = "please select a gender";
+      genderError.style =
+        "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
+      gender.focus();
+      return false;
+    }else {
+      gender.style.border = "2px solid green";
+      genderError.textContent = "";
+      ninNumber.focus();
+    }
+
+
     // const ninRegex = /^CF([a-zA-Z0-9]{12})+$/;
     // const ninRegex2 = /^CM([a-zA-Z0-9]{12})+$/;
     let ninNumberRegex = /^CF([a-zA-Z0-9]{12})+$/;
@@ -126,18 +150,80 @@ const Validate = ()=>{
     else{
        carNumber.style.border = "2px solid green" 
         carnumError.textContent =""
-       
+        vehicleModel.focus
     }
-     
-//     //validating vehicle color
-//     if(vehiclecolor.value == ""){
-//         vehiclecolor.style.border = "2px solid red" 
-//         vColorError.textContent ="Color not defined"
-//         vColorError.style = "color: red; font-size:11px; font-family: Helvetica,arial;";
-//        Date.focus()
-//         return false
-//     }     
- } 
+    
+    // validating car model
+    // validating gender
+    if (vehicleModel.value == "") {
+      vehicleModel.style.border = "2px solid red";
+      vehicleModelError.textContent = "please select a car Model";
+      vehicleModelError.style =
+        "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
+      vehicleModel.focus();
+      return false;
+    }else {
+      vehicleModel.style.border = "2px solid green";
+      vehicleModelError.textContent = "";
+     cartype.focus();
+    }
+   
+    
+    // validating cartype
+    if (cartype.value == "") {
+      cartype.style.border = "2px solid red";
+      cartypeError.textContent = "please select a cartype";
+      cartypeError.style =
+        "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
+      cartype.focus();
+      return false;
+    }else {
+      cartype.style.border = "2px solid green";
+      cartypeError.textContent = "";
+      service.focus();
+    }
+
+  // validating service
+  if (service.value == "") {
+    service.style.border = "2px solid red";
+    serviceError.textContent = "please select a service";
+    serviceError.style =
+      "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
+    service.focus();
+    return false;
+  }else {
+    service.style.border = "2px solid green";
+    serviceError.textContent = "";
+    price.focus();
+  }
+
+  // validating price
+  if (price.value == "") {
+    price.style.border = "2px solid red";
+    priceError.textContent = "please select a price";
+    priceError.style =
+      "color: red; fontsize:11px; font-size:Helvetical, Arial,sans-serif";
+    price.focus();
+    return false;
+  }else {
+    price.style.border = "2px solid green";
+    priceError.textContent = "";
+    vehiclecolor.focus();
+  }
+  //validating vehicle color
+  if(vehiclecolor.value == ""){
+    vehiclecolor.style.border = "2px solid red" 
+    vehicleColorError.textContent ="Color not defined"
+    vehicleColorError.style = "color: red; font-size:11px; font-family: Helvetica,arial;";
+    vehiclecolor.focus()
+    return false
+  }else {
+    vehiclecolor.style.border = "2px solid green";
+    vehicleColorError.textContent = "";
+   
+  }
+
+} 
  
  
 // // const fee = ()=>{ 

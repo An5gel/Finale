@@ -8,26 +8,29 @@ head
 
 //- each client in client
 .text
-  h1 RECEIPT 
+  h1 DOCKVILLE PARKING 
+  h3 Parking Reciept
   p 
 
-      h3 Name: #{client.firstname}  
+      p #{client.time}  #{client.date}
       
-      h3 Date: #{client.date}
+      h3  #{client.firstname}
 
-      h3 Time: #{client.time}
+      p Phone: #{client.telephone}
+      
+      p NIN Number: #{client.ninnumber}
 
-      h3 Number plate: #{client.carnumber}
+      p Cartype: #{client.cartype}
 
-      h3 Phone: #{client.telephone}
-
-      h3 NIN Number: #{client.ninnumber}
-
-      h3 Cartype: #{client.cartype}
+      p Number plate: #{client.carnumber}
 
       h3 Service: #{client.service}
 
-      h3 Price: #{client.price} 
+      h3 Price: #{client.price}
+
+      p Better Choices, Happy Customers
+      
+      p NB:"Don't drink drunk" 
 
 script(src='/bootstrap/set/bootstrap.js') 
   

@@ -4,7 +4,7 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel='stylesheet' href='/bootstrap/set/bootstrap/css')
-        link(rel='stylesheet' href='/css/attendant.css')
+        link(rel='stylesheet' href='/css/cashier.css')
         title Document
     body 
         .container-fluid
@@ -20,22 +20,21 @@ html(lang="en")
                                     a.nav-link.active(aria-current='page' href='#') Home
                                 li.nav-item
                                     a.nav-link.active(aria-current='page' href='services') Services
-                            .buts
-                                button#but-p.btn.btn-outline-primary(type='button' onclick="location.href = 'login';") Back
-                                button.btn.btn-outline-primary(type='button' onclick="location.href = 'logout';") Logout   
-    h1      Hey  #{loggedinUser}  
+                           
+                            button#but-p.btn.btn-outline-primary(type='button' onclick="location.href = 'login';") Back
+                            button.btn.btn-outline-primary(type='button' onclick="location.href = 'logout';") Logout   
+    h1      Cashier #{loggedinUser}           
     ul 
         li.buttonlinks  
             a.btn.btn-primary( href="") Employees
         li.buttonlinks 
             a.btn.btn-primary( href="services") Services
         li.buttonlinks  
-            a.btn.btn-primary( href="") Tyre Report
+            a.btn.btn-primary( href="tyreReport") Tyre Report
         li.buttonlinks  
-            a.btn.btn-primary( href="") Report
+            a.btn.btn-primary( href="report") Report
         li.buttonlinks  
-            a.btn.btn-primary( href="") Battery Report
+            a.btn.btn-primary( href="batteryreport") Battery Report
         li.buttonlinks  
             a.btn.btn-primary( href="") Settings
-                                
-                        
+                       
