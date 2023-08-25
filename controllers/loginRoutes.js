@@ -18,10 +18,10 @@ router.post("/login", passport.authenticate("local",
             res.render("manager.pug", {loggedinUser})
         }
        if(req.session.user.role === "attendant"){
-            res.render("attendant.pug")
+            res.render("attendant.pug", {loggedinUser})
         }
        if(req.session.user.role === "cashier"){
-            res.render("cashier.pug")
+            res.render("cashier.pug", {loggedinUser})
         }
     
   
