@@ -34,7 +34,7 @@ head
           button.buts.btn.btn-outline-primary(type='button' onclick="location.href = 'landing';")
               | Back
     .register
-      form(name="signupform" method="POST" action="/api/regsignup")
+      form(name="signupform" method="POST" action="/api/regsignup" onsubmit="return Validate();")
         #title
           h3  SIGNUP
         img(src='/images/boda.jpeg' alt='')
@@ -42,19 +42,35 @@ head
             .col-md-6
                 label.form-label(for='firstname') First name
                 input#firstname.form-control(type='text' name='firstname')
+                span#dnameerror
             .col-md-6
                 label.form-label(for='lastname') Last name
                 input#lastname.form-control(type='text' name='lastname')
-            .col-12
+                span#lastnameerror
+            .col-4
                 label.form-label(for='username') User Name
                 input#username.form-control(type='text' name='username')
-                
+                span#usernameerror
+            
+            .col-md-4
+                label.form-label(for='telephone') Phone
+                input#telephone.form-control(type='telephone' name='telephone')
+                span#telephoneerror
+            .col-md-4
+                label.form-label(for='gender') Gender*
+                select#inputState.form-select(name='gender' type='text')
+                    option(selected='') 
+                    option(value='female') Female
+                    option(value='male') Male
+                span#genderError
+            .col-md-12
+                label.form-label(for='ninnumber') NIN Number*
+                input#ninnumber.form-control(type='alpha numeric' name='ninnumber')
+                span#ninnumberError
             .col-12
                 label.form-label(for='email') Email
                 input#email.form-control(type='email' name='email')
-            .col-md-6
-                label.form-label(for='telephone') Phone
-                input#telephone.form-control(type='telephone' name='telephone')
+                span#emailerror
             .col-md-6
                 label.form-label(for='role') Role
                 select#inputState.form-select(name='role')
@@ -63,6 +79,7 @@ head
                     option(value='manager') Manager
                     option(value='attendant') Attendants
                     option(value='cashier') Cashier
+                span#roleerror    
             .col-md-6
                 label.form-label(for='section') Section
                 select#inputState.form-select(name='section')
@@ -70,12 +87,14 @@ head
                     option(value='Parking') Parking
                     option(value='Battery') Battery
                     option(value='Tire Clinic') Tyre Clinic
-            .col-6
+                span#sectionerror
+            .col-12
                 label.form-label(for='password') Password
                 input#password.form-control(type='password' name='password')
+                span#passworderror
             .col-12
                 button.ton-b.btn.btn-primary(type='submit') Sign in
 
 
-  script(src='/js/formvalidation.js')
+  script(src='/js/signupvalidation.js')
   script(src='/bootstrap/set/bootstrap/js')

@@ -2,35 +2,53 @@ doctype html
 head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  llink(rel='stylesheet' href='/bootstrap/set/bootstrap/css')
+  link(rel='stylesheet' href='/bootstrap/set/bootstrap/css')
   link(rel='stylesheet' href='/css/receipt.css')
-  title Document
-
+  title parking receipt
+body 
+  .container-fluid
+  .row
+    navbar.navbar.navbar-expand-lg.my-navbar
+      .container-fluid
+          a.navbar-brand(href='#') DV PARKING
+          button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+          #navbarSupportedContent.collapse.navbar-collapse
+            ul.navbar-nav.me-auto.mb-2.mb-lg-0
+              li.nav-item
+                a.nav-link.active(aria-current='page' href='#') Home
+              li.nav-item
+                a.nav-link.active(aria-current='page' href='services') Services
+                  
+            button#but-p.btn.btn-outline-primary(type='button' onclick="location.href = 'report';") Back
+            button.btn.btn-outline-primary(type='button' onclick="location.href = 'logout';") Logout 
 //- each client in client
 .text
-  h1 DOCKVILLE PARKING 
-  h3 Parking Reciept
-  p 
+  h2 DOCKVILLE PARKING
 
-      p #{client.time}  #{client.date}
-      
-      h3  #{client.firstname}
+  h4 Parking Reciept
+  
+  p #{client.time}  #{client.date}
+  
+  //h4 #{UserID} 
+  
+  p  Client: #{client.firstname}
 
-      p Phone: #{client.telephone}
-      
-      p NIN Number: #{client.ninnumber}
+  p Phone: #{client.telephone}
+  
+  p NIN Number: #{client.ninnumber}
 
-      p Cartype: #{client.cartype}
+  p Cartype: #{client.cartype}
 
-      p Number plate: #{client.carnumber}
+  p Number plate: #{client.carnumber}
 
-      h3 Service: #{client.service}
+  h4 Service: #{client.service}
 
-      h3 Price: #{client.price}
+  h4 Price: #{client.price}
 
-      p Better Choices, Happy Customers
-      
-      p NB:"Don't drink drunk" 
+  p Better Choices, Happy Customers
+  
+  p NB:"Don't drive drunk" 
 
 script(src='/bootstrap/set/bootstrap.js') 
   

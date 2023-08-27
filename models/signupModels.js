@@ -22,6 +22,12 @@ const mongoose = require("mongoose");
     telephone:{
         type : String
     },
+    gender:{
+        type : String
+    },
+    ninnumber:{
+        type : String
+    },
     role:{
         type :String
     },

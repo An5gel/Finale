@@ -1,33 +1,28 @@
-body{
-    background-image: url("/images/bg2.jpeg");
-    background-size: cover;
-    backdrop-filter:b lur(5x);
+body {
+  background-image: url("/images/bg2.jpeg");
+  background-size: cover;
+  backdrop-filter: b lur(5x);
 }
-.text{
-    width: 250px;
-    margin: 100px auto;
-    border: 1px solid black;
-    border-radius: 20px;
-    padding: 10px;
-    background-color: #fff;
-    text-align: center;
+.text {
+  width: 250px;
+  
+  margin: 10px auto;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #fff;
+  text-align: center;
+  font-family:  sans-serif;
 }
-li{
-    list-style-type: none;
-    float: left;
-    padding-left: 7px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-right: 00px;
-    text-align: left;
+
+.my-navbar {
+  color: #121111;
+  background-color: #dff6ff;
 }
-#buts{
-    margin: 3px;
+
+#but-p {
+  margin: 3px;
 }
-.my-navbar{   
-    color: #121111;
-    background-color:  #dff6ff;
-}
-.navbar-brand,.nav-item{
-    color: #0f0e0e;
+button:hover {
+  background-color: #051367;
 }
