@@ -34,7 +34,7 @@ head
           button#btn.btn.btn-outline-primary(type='button' onclick="location.href = 'landing';")
               | Back
     .register
-      form(name="loginupform" method="POST" action="/api/login")
+      form(name="loginform" method="POST" action="/api/login" onsubmit="return Validate();")
         #title
           h3  LOGIN
         img(src='/images/boda.jpeg' alt='')
@@ -42,13 +42,14 @@ head
              .col-12
                 label.form-label(for='email') Email
                 input#email.form-control(type='email' name='email')
-           
+                span#emailError
              .col-12
                 label.form-label(for='password') Password
                 input#password.form-control(type='password' name='password')
+                span#passwordError
              .col-12
                 button.ton-b.btn.btn-primary(type='submit') LOGIN
 
 
-  script(src='/js/formvalidation.js')
+  script(src='/js/loginvalidation.js')
   script(src='/bootstrap/set/bootstrap/js')
