@@ -32,7 +32,7 @@ head
                   a.dropdown-item(href='#') Something else here
             li.nav-item
               a.nav-link.disabled(aria-disabled='true')
-          button#btn.btn.btn-outline-primary(type='button' onclick="location.href = 'signup';")
+          button#btn.btn.btn-outline-primary(type='button' onclick="goBack()")
               | Back
  
     .register
@@ -122,5 +122,5 @@ head
 
 
           
-script(src='../../set/bootstrap/js')
-
+script(src='/bootstrap/set/bootstrap/js')
+script(src='/js/back.js')

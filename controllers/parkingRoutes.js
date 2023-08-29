@@ -47,7 +47,7 @@ router.post("/regregister", async (req, res) => {
             req.session.user = req.user
             let UserID = req.session.user.username;
             if(req.session.user.role === "attendant"){
-                 items = await Parker.find({employeeId: UserID});
+                 items = await Parker.find({userId: UserID});
             } else{
                items = await Parker.find();
             }

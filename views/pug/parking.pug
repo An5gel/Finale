@@ -33,7 +33,7 @@ head
               a.nav-link.disabled(aria-disabled='true')
           
           button#but.btn.btn-outline-success(type='submit' onclick="location.href = 'form';") ADD
-          button.btn.btn-outline-primary(type='button' onclick="location.href = 'services';")
+          button.btn.btn-outline-primary(type='button' onclick="goBack()")
                 | Back
     .main.card-body.image-body
       .slide-container
@@ -69,3 +69,4 @@ head
               h5.card-title.title Boda-boda
               
   script(src='/bootstrap/set/bootstrap.js')
+  script(src='/js/back.js')

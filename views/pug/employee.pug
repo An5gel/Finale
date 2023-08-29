@@ -19,53 +19,50 @@ head
               a.nav-link.active(aria-current='page' href='landing') Home
           .buts
             
-            button#but-p.btn.btn-outline-primary(type='button' onclick="location.href = 'form';")
+            button#but-p.btn.btn-outline-primary(type='button' onclick="goBack()")
               | Back
             button.btn.btn-outline-primary(type='button' onclick="location.href = 'logout';")
               | Logout   
             
   
-    
-
-  
-
-table.table()
-  thead.table-dark
-    tr
-      th(scope='col') First Name
-      th(scope='col') Last Name
-      th(scope='col') User name
-      th(scope='col') Email
-      th(scope='col') Phone
-      th(scope='col') Gender
-      th(scope='col') NINnumber
-      th(scope='col') Role
-      th(scope='col') Section
-      th(scope='col') Delete
-      th(scope='col') Edit
-      
-     
-  tbody
-  if persons.length 
-    each client in persons
-      tr
-        td #{client.firstname}
-        td #{client.lastname}
-        td #{client.username}
-        td #{client.email}
-        td #{client.telephone}
-        td #{client.gender}
-        td #{client.ninnumber}
-        td #{client.role}
-        td #{client.section}
-        td          
-            form(action="/api/employee/delete" method="POST")
-            input(type="hidden" name="id" value=client._id)
-            button.btn.btn-danger(type="submit") Delete
-        td 
-          a.btn.btn-warning(href="/api/employee/edit/"+client._id) Edit   
-          a(href=`/api/employee/edit/"${client._id}`)    
-      
-  //- else 
-    p There are no employees in the database
-script(src='/bootstrap/set/bootstrap/js')
+    table.table()
+      thead.table-dark
+        tr
+          th(scope='col') First Name
+          th(scope='col') Last Name
+          th(scope='col') User name
+          th(scope='col') Email
+          th(scope='col') Phone
+          th(scope='col') Gender
+          th(scope='col') NINnumber
+          th(scope='col') Role
+          th(scope='col') Section
+          th(scope='col') Delete
+          th(scope='col') Edit
+          
+        
+      tbody
+      if persons.length 
+        each client in persons
+          tr
+            td #{client.firstname}
+            td #{client.lastname}
+            td #{client.username}
+            td #{client.email}
+            td #{client.telephone}
+            td #{client.gender}
+            td #{client.ninnumber}
+            td #{client.role}
+            td #{client.section}
+            td          
+                form(action="/api/employee/delete" method="POST")
+                input(type="hidden" name="id" value=client._id)
+                button.btn.btn-danger(type="submit") Delete
+            td 
+              a.btn.btn-warning(href="/api/employee/edit/"+client._id) Edit   
+              a(href=`/api/employee/edit/"${client._id}`)    
+          
+      //- else 
+        p There are no employees in the database
+    script(src='/bootstrap/set/bootstrap/js')
+    script(src='/js/back.js')

@@ -31,7 +31,7 @@ head
                   a.dropdown-item(href='parking') Parking
             li.nav-item
               a.nav-link(href="")
-          button#btn.btn.btn-outline-primary(type='button' onclick="location.href = 'landing';")
+          button#btn.btn.btn-outline-primary(type='button' onclick="goBack()")
               | Back
     .register
       form(name="loginform" method="POST" action="/api/login" onsubmit="return Validate();")
@@ -53,3 +53,4 @@ head
 
   script(src='/js/loginvalidation.js')
   script(src='/bootstrap/set/bootstrap/js')
+  script(src='/js/back.js')

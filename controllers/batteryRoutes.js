@@ -1,48 +1,48 @@
 const express = require("express");
-const TyreClients = require("../models/tyreModels")
+const BatteryClients = require("../models/batteryModels")
 
 const router = express.Router();
 
 
-/// tyreform routes
-router.get('/tyreform', (req, res)=>{
-    res.render('tireform.pug')
+/// batteryform routes
+router.get('/batteryform', (req, res)=>{
+    res.render('batteryform.pug')
 });
-// tyreform page route
-router.get('/tyreform', (req, res)=>{
+// batteryform page route
+router.get('/batteryform', (req, res)=>{
     req.session.user = req.user
    let UserID = req.session.user.username;
    console.log(UserID)
-    res.render('tireform.pug', {UserID})
+    res.render('batteryform.pug', {UserID})
 });
 
-router.post("/tyreform", async (req, res) => {
+router.post("/batteryform", async (req, res) => {
     try{
         console.log(req.body);
-        const client = new TyreClients(req.body);
+        const client = new BatteryClients(req.body);
         await client.save();
         console.log(req.body);
-        res.redirect("/api/tyreReport"); 
+        res.redirect("/api/batteryReport"); 
     } catch(error){
-        res.status(400).render("tireform.pug")
+        res.status(400).render("batteryform.pug")
         console.log(error);
     }
 });
-router.get("/tyreReport", async(req, res)=>{
+router.get("/batteryReport", async(req, res)=>{
     try{
         let items= ""
             req.session.user = req.user
             let UserID = req.session.user.username;
             if(req.session.user.role === "attendant"){
-                 items = await TyreClients.find({employeeId: UserID});
+                 items = await BatteryClients.find({employeeId: UserID});
             } else{
-               items = await TyreClients.find();
+               items = await BatteryClients.find();
             }
-        let price = await TyreClients.aggregate([
+        let price = await BatteryClients.aggregate([
             { $group: { _id: "$all", totalPrice: { $sum: "$price" } } },
           ]);
           console.log(price);
-          res.render("tyreReport.pug", { persons: items, allPrices: price[0].totalPrice });
+          res.render("batteryReport.pug", { persons: items, allPrices: price[0].totalPrice });
     }
     catch(error){
         console.log(error)
@@ -50,9 +50,9 @@ router.get("/tyreReport", async(req, res)=>{
     }
 });
 
-router.post("/tyreReport/delete", async (req, res )=>{
+router.post("/batteryReport/delete", async (req, res )=>{
 try{
-    await TyreClients.deleteOne({_id: req.body.id});
+    await BatteryClients.deleteOne({_id: req.body.id});
     res.redirect("back");
 } 
 catch(error){
@@ -61,36 +61,36 @@ catch(error){
 });
 
 // how to update data
-router.get("/tyreform/edit/:id", async (req, res)=>{
+router.get("/batteryform/edit/:id", async (req, res)=>{
 try{
-    const emp = await TyreClients.findOne({
+    const emp = await BatteryClients.findOne({
         _id:req.params.id
     })
-    res.render("edittyreregister", {client:emp})
+    res.render("batteryedit.pug", {client:emp})
 }
 catch(error){
     res.status(400).send("could not find employee in database")
     console.log(error)
 }
 });
-router.post("/tyreReport/edit/", async (req, res)=>{
+router.post("/batteryReport/edit/", async (req, res)=>{
 try{
-    await TyreClients.findOneAndUpdate({_id:req.query.id},req.body);
-    res.redirect("/api/tyreReport")
+    await BatteryClients.findOneAndUpdate({_id:req.query.id},req.body);
+    res.redirect("/api/batteryReport")
 }
 catch(error){
     res.status(400).send("could not find clients  in database")
     console.log(error)
 }
 });
-// tyrereceipt route
-router.get("/tyrereceipt/:id", async (req, res)=>{
+// batteryreceipt route
+router.get("/batteryreceipt/:id", async (req, res)=>{
     try{
-        const client = await TyreClients.findOne({
+        const client = await BatteryClients.findOne({
             _id:req.params.id
         })
         console.log(client)
-        res.render("tyrereceipt.pug", {client})
+        res.render("batteryreceipt.pug", {client})
     }
     catch(error){
         res.status(400).send("could not find receipt in database")

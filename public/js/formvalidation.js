@@ -7,11 +7,11 @@ const Validate = ()=>{
     let carNumber = document.register.carnumber
     let vehicleModel = document.register.vehiclemodel
     let vehiclecolor = document.register.vehiclecolor
-    // let date = document.register.date
-    // let time = document.register.time
     let cartype = document.register.cartype
     let service = document.register.service
     let price = document.register.price
+    let date = document.register.date
+    let time = document.register.time
     
    
 
@@ -27,6 +27,8 @@ const Validate = ()=>{
     let cartypeError = document.getElementById("cartypeError")
     let serviceError = document.getElementById("serviceError")
     let priceError = document.getElementById("priceError")
+    let dateError = document.getElementById("dateError")
+    let timeError = document.getElementById("timeError")
 
     //validating first name inputs
     //validating for emptyness
@@ -210,6 +212,7 @@ const Validate = ()=>{
     priceError.textContent = "";
     vehiclecolor.focus();
   }
+
   //validating vehicle color
   if(vehiclecolor.value == ""){
     vehiclecolor.style.border = "2px solid red" 
@@ -220,9 +223,35 @@ const Validate = ()=>{
   }else {
     vehiclecolor.style.border = "2px solid green";
     vehicleColorError.textContent = "";
+    date.focus();
+  }
+  //validating date
+  if(date.value == ""){
+    date.style.border = "2px solid red" 
+    dateError.textContent ="Color not defined"
+    dateError.style = "color: red; font-size:11px; font-family: Helvetica,arial;";
+    date.focus()
+    return false
+  }else {
+    date.style.border = "2px solid green";
+    dateError.textContent = "";
+    time.focus();
+  }
+
+  //validating time
+  if(time.value == ""){
+    time.style.border = "2px solid red" 
+    timeError.textContent ="Color not defined"
+    timeError.style = "color: red; font-size:11px; font-family: Helvetica,arial;";
+    time.focus()
+    return false
+  }else {
+    time.style.border = "2px solid green";
+    timeError.textContent = "";
    
   }
 
+  
 } 
  
  

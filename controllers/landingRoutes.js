@@ -23,14 +23,41 @@ router.get('/parking', (req, res)=>{
     res.render('parking.pug')
 });
 
+// parkingreceipt page route
+router.get('/parkingreceipt', (req, res)=>{
+    res.render('receipt.pug')
+});
+
+
 // tire clinic page route
 router.get('/tire', (req, res)=>{
     res.render('tire.pug')
+});
+// tyrereceipt clinic page route
+router.get('/tyreReceipt', (req, res)=>{
+    res.render('tyreReceipt.pug')
+});
+// tyreReport page route
+router.get('/tyreReport', (req, res)=>{
+    res.render('tyreReport.pug')
 });
 
 // battery page route
 router.get('/battery', (req, res)=>{
     res.render('battery.pug')
+});
+// batteryform page route
+router.get('/batteryform', (req, res)=>{
+    res.render('batteryform.pug')
+});
+// batteryReport page route
+router.get('/batteryReport', (req, res)=>{
+    res.render('batteryReport.pug')
+});
+
+// batteryReceipt page route
+router.get('/batteryReceipt', (req, res)=>{
+    res.render('batteryReceipt.pug')
 });
 
 // services route

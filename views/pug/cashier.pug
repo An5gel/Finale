@@ -21,7 +21,7 @@ html(lang="en")
                                 li.nav-item
                                     a.nav-link.active(aria-current='page' href='services') Services
                            
-                            button#but-p.btn.btn-outline-primary(type='button' onclick="location.href = 'login';") Back
+                            button#but-p.btn.btn-outline-primary(type='button' onclick="goBack()") Back
                             button.btn.btn-outline-primary(type='button' onclick="location.href = 'logout';") Logout   
     h1      Cashier : #{loggedinUser}           
     ul 
@@ -37,4 +37,4 @@ html(lang="en")
             a.btn.btn-primary( href="batteryreport") Battery Report
         li.buttonlinks  
             a.btn.btn-primary( href="") Settings
-                       
+script(src="/js/back.js")                       

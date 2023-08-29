@@ -20,7 +20,7 @@ body
               li.nav-item
                 a.nav-link.active(aria-current='page' href='services') Services
                   
-            button#but-p.btn.btn-outline-primary(type='button' onclick="location.href = 'report';") Back
+            button#but-p.btn.btn-outline-primary(type='button' onclick="goBack()") Back
             button.btn.btn-outline-primary(type='button' onclick="location.href = 'logout';") Logout 
 //- each client in client
 .text
@@ -51,4 +51,5 @@ body
   p NB:"Don't drive drunk" 
 
 script(src='/bootstrap/set/bootstrap.js') 
+script(src='/js/back.js') 
   

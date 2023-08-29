@@ -31,7 +31,7 @@ head
                   a.dropdown-item(href='parking') Parking
             li.nav-item
               a.nav-link.disabled(aria-disabled='true')
-          button.buts.btn.btn-outline-primary(type='button' onclick="location.href = 'landing';")
+          button.buts.btn.btn-outline-primary(type='button' onclick="goBack()")
               | Back
     .register
       form(name="signupform" method="POST" action="/api/regsignup" onsubmit="return Validate();")
@@ -98,3 +98,4 @@ head
 
   script(src='/js/signupvalidation.js')
   script(src='/bootstrap/set/bootstrap/js')
+  script(src='/js/back.js')

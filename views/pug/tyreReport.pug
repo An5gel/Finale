@@ -19,7 +19,7 @@ head
               a.nav-link.active(aria-current='page' href='landing') Home
           .buts
             
-            button#but-p.btn.btn-outline-primary(type='button' onclick="location.href = 'tyreform';")
+            button#but-p.btn.btn-outline-primary(type='button' onclick="goBack()")
               | Back
             button.btn.btn-outline-primary(type='button' onclick="location.href = 'logout';")
               | Logout   
@@ -50,7 +50,7 @@ table.table()
       th(scope='col') Print
      
   tbody
-  if persons.length 
+  if persons.length
     each client in persons
       tr
         td #{client.firstname}
@@ -76,3 +76,4 @@ table.table()
   //- else 
     p There are no employees in the database
 script(src='/bootstrap/set/bootstrap/js')
+script(src='/js/back.js')

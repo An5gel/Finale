@@ -3,8 +3,8 @@ head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   link(rel='stylesheet' href='/bootstrap/set/bootstrap/css')
-  link(rel='stylesheet' href='/css/tyreform.css')
-  title Document
+  link(rel='stylesheet' href='/css/batteryform.css')
+  title batteryform
 .container-fluid
   .row
     nav.navbar.navbar-expand-lg.my-nav
@@ -31,18 +31,29 @@ head
                   a.dropdown-item(href='#') Something else here
             li.nav-item
               a.nav-link.disabled(aria-disabled='true')
-          button#btn.btn.btn-outline-primary(type='button'onclick="goBack()")
+          button#btn.btn.btn-outline-primary(type='button' onclick="location.href = 'signup';")
               | Back
     .register
-      form(name='tyreregister' action='/api/tyreReport/edit?id='+client._id  method='POST')
+      form(name='tyreregister' action='#'  method='POST' onsubmit="return Validate();")
         #title
-        h3  TYRE CLINIC REGISTER
-        img(src='/images/ptire.jpeg' alt='')
+        h3  BATTERY REGISTER
+        img(src='/images/bat.jpeg' alt='')
         .form.row.g-3
           .col-md-6
             label.form-label(for='firstname')  Name*
             input#firstname.form-control(type='text' name='firstname' value=client.firstname)
             span#dnameerror
+          .col-md-6
+            label.form-label(for='gender') Gender*
+            select#inputState.form-select(type="text" name='gender' value=client.gender)
+              option(selected='') 
+              option(value='Female') Female
+              option(value='male') Male
+            span#genderError
+          .col-md-12
+            label.form-label(for='ninnumber') NIN Number*
+            input#ninnumber.form-control(type='alpha numeric' name='ninnumber' value=client.ninnumber)
+            span#ninnumberError   
           .col-md-6
             label.form-label(for='telephone') Phone*
             input#telephone.form-control(type='text'  name='telephone' value=client.telephone)
@@ -51,46 +62,40 @@ head
           .col-md-6
             label.form-label(for='size') Size*
             input#carnumber.form-control(type='text' name='size' value=client.size)
-            span#carnumError
+            span#sizeError
           .col-md-6
             label.form-label(for='vehiclemodel') Vehicle model*
-            select#inputState.form-select(name='vehiclemodel' value=client.vehiclemodel)
-              option(selected='') Choose...
+            select#inputState.form-select(name='vehiclemodel' value=client.vehiclemodel.name)
+              option(selected='') 
               option(value='Toyota') Toyota
               option(value='Rangerover') Rangerover
             span#modelError
-          .col-md-6
-            label.form-label(for='make') Make*
-            select#inputState.form-select(name='make' value=client.make)
-              option(selected='') Choose...
-              option(value='Bridgestone') Bridgestone
-              option(value='Yokohama') Yokohama
-            
-            span#vColorError
+          
           .col-md-3
             label.form-label(for='date') Date*
-            input#exampleInputDate1.form-control(type='date' name='date' value=client.date)
+            input#date.form-control(type='date' name='date' value=client.date)
+            span#dateerror
           .col-md-3
-            label.form-label(for='exampleInputTime1') Time*
-            input#exampleInputTime1.form-control(name='time' type="time" value=client.time)
-        
+            label.form-label(for='time') Time*
+            input#time.form-control(name='time' type="time" value=client.time)
+            span#timeerror
           .col-md-6
             label.form-label(for='service') Service*
             select#inputState.form-select(name='service' value=client.service)
-              option(selected='') Choose...
-              option(value='puncture fix') Puncture fix
-              option(value='valves') Valves
-              option(value='tyre pressure') Tyre pressure
+              option(selected='') 
+              option(value='hire') Hire
+              option(value='purchase') Purchase
             span#serviceError
           .col-md-6
             label.form-label(for='Price') Price*
             select#inputState.form-select(name='price' value=client.price)
-              option(selected='') Choose...
+              option(selected='') 
               option(value='5000') 5000 
               option(value='500') 500
             span#priceError
+          .col-md-12
+            input#employeeId.form-control(type='hidden' name='employeeId' value=UserID  )
           .col-12
             button.ton-b.btn.btn-primary(type='submit' onsubmit="location.href='services'") SUBMIT
-  script(src='/js/formvalidation.js')
+  script(src='/js/batteryvalidation.js')
   script(src='/bootstrap/set/bootstrap/js')
-  script(src='/js/back.js')

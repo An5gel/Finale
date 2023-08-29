@@ -32,7 +32,7 @@ head
             li.nav-item
               a.nav-link.disabled(aria-disabled='true')
           button#but.btn.btn-outline-success(type='submit' onclick="location.href = 'tyreform';") ADD
-          button.btn.btn-outline-primary(type='button' onclick="location.href = 'services';")
+          button.btn.btn-outline-primary(type='button' onclick="goBack()")
               | Back
     .main.card-body.image-body
       .slide-container
@@ -54,4 +54,4 @@ head
             img#img3.img(src='../../images/tirep.jpg' alt='...')
             .card-body
               h5.card-title.title Tire pressure
-              
+script(src="/js/back.js")              

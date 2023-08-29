@@ -17,7 +17,7 @@ head
             li.nav-item
               a.nav-link.active(aria-current='page' href='#') Home
           .buts
-            button.btn.btn-outline-primary(type='button' onclick="location.href = 'login';")
+            button.btn.btn-outline-primary(type='button' onclick="goBack()")
               | Back
           
     .main.card-body.image-body
@@ -49,4 +49,5 @@ head
             a#button-3.button(href='#slider-span3')
     .footer
       h4 Your better parking choice
-script(src='../set/bootstrap/js')
+script(src='/bootstrap/set/bootstrap/js')
+script(src='/js/back.js')

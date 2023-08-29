@@ -1,11 +1,20 @@
 const mongoose = require("mongoose")
 
-const TyreSchema = new mongoose.Schema ({
+const BatterySchema = new mongoose.Schema ({
     firstname:{
         type : String,
         required: true,
         trim: true,
     },
+
+    gender:{
+        type: String
+    },
+    
+    ninnumber:{
+        type: String
+    },
+    
     telephone:{
         type: String
     },
@@ -44,5 +53,5 @@ const TyreSchema = new mongoose.Schema ({
 });
 
 
-module.exports = mongoose.model("TyreClients",TyreSchema)
+module.exports = mongoose.model("BatteryClients",BatterySchema)
 
