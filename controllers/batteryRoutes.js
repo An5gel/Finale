@@ -8,12 +8,15 @@ const router = express.Router();
 router.get('/batteryform', (req, res)=>{
     res.render('batteryform.pug')
 });
+
+
+
 // batteryform page route
 router.get('/batteryform', (req, res)=>{
     req.session.user = req.user
    let UserID = req.session.user.username;
    console.log(UserID)
-    res.render('batteryform.pug', {UserID})
+    res.render('batteryform.pug', {UserID:UserID})
 });
 
 router.post("/batteryform", async (req, res) => {
@@ -31,19 +34,31 @@ router.post("/batteryform", async (req, res) => {
 router.get("/batteryReport", async(req, res)=>{
     try{
         let items= ""
+        let price= 0
             req.session.user = req.user
             let UserID = req.session.user.username;
+            console.log(UserID)
             if(req.session.user.role === "attendant"){
-                 items = await BatteryClients.find({employeeId: UserID});
+                items = await BatteryClients.find({employeeId: UserID});
+                console.log(items)
+          
+               items.forEach((element) => {
+               price += element.price
+  
+               });
             } else{
-               items = await BatteryClients.find();
+                items = await BatteryClients.find();
+              let priceData = await BatteryClients.aggregate([
+                { $group: { _id: "$all", totalPrice: { $sum: "$price" } } },
+              ]);
+              price = priceData[0].totalPrice
             }
-        let price = await BatteryClients.aggregate([
-            { $group: { _id: "$all", totalPrice: { $sum: "$price" } } },
-          ]);
-          console.log(price);
-          res.render("batteryReport.pug", { persons: items, allPrices: price[0].totalPrice });
-    }
+            
+             
+            console.log(price);
+            res.render("batteryReport.pug", { persons: items, allPrices: price });
+      }
+    
     catch(error){
         console.log(error)
        return res.status(400).send({message: "sorry could not retrieve registered clients"})

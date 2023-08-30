@@ -44,19 +44,31 @@ router.post("/regregister", async (req, res) => {
     router.get("/report", async(req, res)=>{
         try{
             let items= ""
+            let price = 0
             req.session.user = req.user
             let UserID = req.session.user.username;
+            console.log(UserID)
+            console.log(req.session.user.role)
             if(req.session.user.role === "attendant"){
-                 items = await Parker.find({userId: UserID});
+                 items = await Parker.find({employeeId: UserID});
+                 console.log(items)
+           
+                items.forEach((element) => {
+                price += element.price
+   
+                });
+
             } else{
                items = await Parker.find();
-            }
-            
-            let price = await Parker.aggregate([
+              let priceData = await Parker.aggregate([
                 { $group: { _id: "$all", totalPrice: { $sum: "$price" } } },
               ]);
+              price = priceData[0].totalPrice
+            }
+            
+             
               console.log(price);
-              res.render("report.pug", { persons: items, allPrices: price[0].totalPrice });
+              res.render("report.pug", { persons: items, allPrices: price });
         }
         catch(error){
             console.log(error)

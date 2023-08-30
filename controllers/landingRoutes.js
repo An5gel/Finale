@@ -37,10 +37,7 @@ router.get('/tire', (req, res)=>{
 router.get('/tyreReceipt', (req, res)=>{
     res.render('tyreReceipt.pug')
 });
-// tyreReport page route
-router.get('/tyreReport', (req, res)=>{
-    res.render('tyreReport.pug')
-});
+
 
 // battery page route
 router.get('/battery', (req, res)=>{
@@ -50,10 +47,7 @@ router.get('/battery', (req, res)=>{
 router.get('/batteryform', (req, res)=>{
     res.render('batteryform.pug')
 });
-// batteryReport page route
-router.get('/batteryReport', (req, res)=>{
-    res.render('batteryReport.pug')
-});
+
 
 // batteryReceipt page route
 router.get('/batteryReceipt', (req, res)=>{

@@ -33,8 +33,9 @@ head
               a.nav-link.disabled(aria-disabled='true')
           button#btn.btn.btn-outline-primary(type='button' onclick="location.href = 'signup';")
               | Back
+    p userid: #{UserID}
     .register
-      form(name='tyreregister' action='#'  method='POST' onsubmit="return Validate();")
+      form(name='tyreregister' action='/api/batteryform'  method='POST' onsubmit="return Validate();")
         #title
         h3  BATTERY REGISTER
         img(src='/images/bat.jpeg' alt='')
