@@ -34,48 +34,54 @@ head
 table.table()
   thead.table-dark
     tr
+      th(scope='col') Attendant
       th(scope='col') Date
       th(scope='col') Time
       th(scope='col') Rct no.
-      th(scope='col') Driver's name
+      th(scope='col') Name
       th(scope='col') Phone
-      th(scope='col') Gender 
       th(scope='col') Number plate
       th(scope='col') Car type
       th(scope='col') Service
       th(scope='col') Price
       th(scope='col') Payment Status
-      th(scope='col') Print
       th(scope='col') Parking Status
+      th(scope='col') Delete
+      th(scope='col') Edit
+      th(scope='col') Print
      
   tbody
   if persons.length 
     each client in persons
       tr
       
+        td #{client.employeeId}
         td #{client.date}
         td #{client.time}
         td #{client.receiptnumber}
         td #{client.firstname}
         td #{client.telephone}
-        td #{client.gender}
         td #{client.carnumber}
         td #{client.cartype}
         td #{client.service}
         td #{client.price}
         td 
-          form()
+          form(action="/api/" method="POST")
             input(type="hidden" name="id" value=client._id)
             a.btn.btn-outline-success(type="submit") Paid
-        td 
-          a#buts.btn.btn-outline-success(type='button' href ="") Print
         td
           form(action="/api/" method="POST")
             input(type="hidden" name="id" value=client._id)
             a.btn.btn-light(type="submit") Signout
-     
-         
-        
+        td
+          form(action="/api/report/delete" method="POST")
+            input(type="hidden" name="id" value=client._id)
+            button.btn.btn-danger(type="submit") Delete
+        td 
+          a.btn.btn-warning(href="/api/form/edit/"+client._id) Edit   
+          a(href=`/api/form/edit/"${client._id}`)    
+        td 
+          a#buts.btn.btn-outline-success(type='button' href = `receipt/${client._id}`) Print
   //- else 
     p There are no employees in the database
 script(src='/bootstrap/set/bootstrap/js')

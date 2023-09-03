@@ -63,11 +63,30 @@ router.get('/services', (req, res)=>{
 router.get('/tab', (req, res)=>{
     res.render('tab.pug')
 });
+
 // cashier route
 router.get('/cashier', (req, res)=>{
     res.render('cashier.pug')
 });
+// cashier-parking report route
 
+    router.get("/CPreport", async(req, res)=>{
+        try{
+         let items = await Parker.find();
+         let price = await Parker.aggregate([
+                { $group: { _id: "$all", totalPrice: { $sum: "$price" } } },
+              ]);
+              
+          console.log(price);
+              res.render("cashier-parkingreport.pug", { persons: items, allPrices: price[0].totalPrice });
+              
+        }
+        catch(error){
+            console.log(error)
+           return res.status(400).send({message: "sorry could not retrieve registered clients"})
+        }
+});
+ 
 // // tab route
 // router.get('/tab', (req, res)=>{
 //     req.session.user = req.user

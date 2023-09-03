@@ -12,7 +12,7 @@ router.get('/tyreform', (req, res)=>{
 router.get('/tyreform', (req, res)=>{
     req.session.user = req.user
    let UserID = req.session.user.username;
-   console.log(UserID)
+   console.log(req.session.firstname)
     res.render('tireform.pug', {UserID})
 });
 
@@ -28,25 +28,40 @@ router.post("/tyreform", async (req, res) => {
         console.log(error);
     }
 });
+
 router.get("/tyreReport", async(req, res)=>{
     try{
         let items= ""
-            req.session.user = req.user
-            let UserID = req.session.user.username;
-            if(req.session.user.role === "attendant"){
-                 items = await TyreClients.find({employeeId: UserID});
-            } else{
-               items = await TyreClients.find();
-            }
-        let price = await TyreClients.aggregate([
+        let price = 0
+        req.session.user = req.user
+        let UserID = req.session.user.username;
+        console.log(UserID)
+        console.log(req.session.user.role)
+        if(req.session.user.role === "attendant"){
+            items = await TyreClients.find({employeeId: UserID});
+            console.log(items)
+       
+            items.forEach((element) => {
+            price += element.price
+
+            });
+
+        } else {
+           items = await TyreClients.find();
+          let priceData = await TyreClients.aggregate([
             { $group: { _id: "$all", totalPrice: { $sum: "$price" } } },
           ]);
-          console.log(price);
-          res.render("tyreReport.pug", { persons: items, allPrices: price[0].totalPrice });
+          price = priceData[0].totalPrice
+        }
+        
+         
+         
+          res.render("tyreReport.pug", { persons: items, allPrices: price });
+          
     }
     catch(error){
         console.log(error)
-       return res.status(400).send({message: "sorry could not retrieve registered clients"})
+       return res.status(400).send({message: "sorry could not retrieve registered clients in tyre section"})
     }
 });
 

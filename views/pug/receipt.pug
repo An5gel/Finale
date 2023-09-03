@@ -24,17 +24,17 @@ body
             button.btn.btn-outline-primary(type='button' onclick="location.href = 'logout';") Logout 
 //- each client in client
 .text
-  h2 DOCKVILLE PARKING
+  h1 DOCKVILLE PARKING
 
-  h4 Parking Reciept
+  h3 Parking Reciept
   
   p #{client.time}  #{client.date}
   
-  //h4 #{UserID} 
+  p #{client.employeeId}  RctNo. 001
   
-  p  Client: #{client.firstname}
+  h3  Client: #{client.firstname}
 
-  p Phone: #{client.telephone}
+  
   
   p NIN Number: #{client.ninnumber}
 
@@ -42,9 +42,9 @@ body
 
   p Number plate: #{client.carnumber}
 
-  h4 Service: #{client.service}
+  h3 Service: #{client.service}
 
-  h4 Price: #{client.price}
+  h3 Price: #{client.price}
 
   p Better Choices, Happy Customers
   

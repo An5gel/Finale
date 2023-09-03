@@ -58,7 +58,7 @@ router.post("/regregister", async (req, res) => {
    
                 });
 
-            } else{
+            } else {
                items = await Parker.find();
               let priceData = await Parker.aggregate([
                 { $group: { _id: "$all", totalPrice: { $sum: "$price" } } },
@@ -69,10 +69,11 @@ router.post("/regregister", async (req, res) => {
              
               console.log(price);
               res.render("report.pug", { persons: items, allPrices: price });
+              
         }
         catch(error){
             console.log(error)
-           return res.status(400).send({message: "sorry could not retrieve registered clients"})
+           return res.status(400).send({message: "sorry could not retrieve registered clients in parking"})
         }
 });
 
