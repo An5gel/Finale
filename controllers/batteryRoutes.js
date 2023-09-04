@@ -12,11 +12,15 @@ router.get('/batteryform', (req, res)=>{
 
 
 // batteryform page route
-router.get('/batteryform', (req, res)=>{
+router.get('/batteryform', async (req, res)=>{
     req.session.user = req.user
    let UserID = req.session.user.username;
    console.log(UserID)
-    res.render('batteryform.pug', {UserID:UserID})
+
+   const parked = await BatteryClients.countDocuments();
+
+   let receiptid = "B-00"+ parked
+    res.render('batteryform.pug', {UserID:UserID, receiptid})
 });
 
 router.post("/batteryform", async (req, res) => {
@@ -33,35 +37,18 @@ router.post("/batteryform", async (req, res) => {
 });
 router.get("/batteryReport", async(req, res)=>{
     try{
-        let items= ""
-        let price= 0
-            req.session.user = req.user
-            let UserID = req.session.user.username;
-            console.log(UserID)
-            if(req.session.user.role === "attendant"){
-                items = await BatteryClients.find({employeeId: UserID});
-                console.log(items)
+     let items = await BatteryClients.find();
+     let price = await BatteryClients.aggregate([
+            { $group: { _id: "$all", totalPrice: { $sum: "$price" } } },
+          ]);
           
-               items.forEach((element) => {
-               price += element.price
-  
-               });
-            } else{
-                items = await BatteryClients.find();
-              let priceData = await BatteryClients.aggregate([
-                { $group: { _id: "$all", totalPrice: { $sum: "$price" } } },
-              ]);
-              price = priceData[0].totalPrice
-            }
-            
-             
-            console.log(price);
-            res.render("batteryReport.pug", { persons: items, allPrices: price });
-      }
-    
+      console.log(price);
+          res.render("batteryReport.pug", { persons: items, allPrices: price[0].totalPrice});
+          
+    }
     catch(error){
         console.log(error)
-       return res.status(400).send({message: "sorry could not retrieve registered clients"})
+       return res.status(400).send({message: "sorry could not retrieve registered clients in tireclinic"})
     }
 });
 

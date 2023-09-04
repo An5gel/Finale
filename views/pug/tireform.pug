@@ -40,6 +40,8 @@ head
         h3  TYRE CLINIC REGISTER
         img(src='/images/ptire.jpeg' alt='')
         .form.row.g-3
+          .col-md-12
+            input#receiptid.form-control(type='hidden' name='receiptid' value=receiptid  )
           .col-md-6
             label.form-label(for='firstname')  Name*
             input#firstname.form-control(type='text' name='firstname' )

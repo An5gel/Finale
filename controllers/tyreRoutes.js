@@ -9,11 +9,14 @@ router.get('/tyreform', (req, res)=>{
     res.render('tireform.pug')
 });
 // tyreform page route
-router.get('/tyreform', (req, res)=>{
+router.get('/tyreform', async (req, res)=>{
     req.session.user = req.user
    let UserID = req.session.user.username;
    console.log(req.session.firstname)
-    res.render('tireform.pug', {UserID})
+   const clinic = await TyreClients.countDocuments();
+ 
+let receiptid = "T-00"+ clinic
+    res.render('tireform.pug', {UserID, receiptid})
 });
 
 router.post("/tyreform", async (req, res) => {
@@ -31,40 +34,20 @@ router.post("/tyreform", async (req, res) => {
 
 router.get("/tyreReport", async(req, res)=>{
     try{
-        let items= ""
-        let price = 0
-        req.session.user = req.user
-        let UserID = req.session.user.username;
-        console.log(UserID)
-        console.log(req.session.user.role)
-        if(req.session.user.role === "attendant"){
-            items = await TyreClients.find({employeeId: UserID});
-            console.log(items)
-       
-            items.forEach((element) => {
-            price += element.price
-
-            });
-
-        } else {
-           items = await TyreClients.find();
-          let priceData = await TyreClients.aggregate([
+     let items = await TyreClients.find();
+     let price = await TyreClients.aggregate([
             { $group: { _id: "$all", totalPrice: { $sum: "$price" } } },
           ]);
-          price = priceData[0].totalPrice
-        }
-        
-         
-         
-          res.render("tyreReport.pug", { persons: items, allPrices: price });
+          
+      console.log(price);
+          res.render("tyreReport.pug", { persons: items, allPrices: price[0].totalPrice});
           
     }
     catch(error){
         console.log(error)
-       return res.status(400).send({message: "sorry could not retrieve registered clients in tyre section"})
+       return res.status(400).send({message: "sorry could not retrieve registered clients in tireclinic"})
     }
 });
-
 router.post("/tyreReport/delete", async (req, res )=>{
 try{
     await TyreClients.deleteOne({_id: req.body.id});

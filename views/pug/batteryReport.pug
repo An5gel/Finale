@@ -19,7 +19,7 @@ head
               a.nav-link.active(aria-current='page' href='landing') Home
           .buts
             
-            button#but-p.btn.btn-outline-primary(type='button' onclick="location.href = 'batteryform';")
+            button#but-p.btn.btn-outline-primary(type='button' onclick="goBack()")
               | Back
             button.btn.btn-outline-primary(type='button' onclick="location.href = 'logout';")
               | Logout   
@@ -74,3 +74,4 @@ table.table()
   //- else 
     p There are no employees in the database
 script(src='/bootstrap/set/bootstrap/js')
+script(src='/js/back.js')

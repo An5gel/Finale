@@ -43,6 +43,10 @@ const ParkingSchema = new mongoose.Schema ({
         type : String,
         required: true
     },
+    receiptid:{
+        type : String,
+        required: true
+    },
     
    
    

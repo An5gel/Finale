@@ -11,17 +11,22 @@ router.get('/parking', (req, res)=>{
 });
 
 // parking page route
-router.get('/form', (req, res)=>{
+router.get('/form', async (req, res)=>{
     req.session.user = req.user
    let UserID = req.session.user.username;
    console.log(UserID)
-    res.render('registerform.pug', {UserID})
+   const parked = await Parker.countDocuments();
+
+   let receiptid = "P-00"+ parked
+   res.render('registerform.pug', {UserID, receiptid})
 });
 
 router.post("/regregister", async (req, res) => {
     try{
         console.log(req.body);
+    
         const client = new Parker(req.body);
+       
         await client.save();
         console.log(req.body);
         res.redirect("/api/report"); 

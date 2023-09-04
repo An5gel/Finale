@@ -36,6 +36,11 @@ const TyreSchema = new mongoose.Schema ({
         type : String,
     
 
+    },
+    receiptid:{
+        type : String,
+    
+
     }
     
    

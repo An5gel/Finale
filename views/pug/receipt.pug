@@ -25,30 +25,31 @@ body
 //- each client in client
 .text
   h1 DOCKVILLE PARKING
-
   h3 Parking Reciept
+  p
   
-  p #{client.time}  #{client.date}
-  
-  p #{client.employeeId}  RctNo. 001
-  
-  h3  Client: #{client.firstname}
+    p #{client.time}  #{client.date}
+    
+    p #{client.employeeId}  
+    h4 RctNo. #{client.receiptid}
+    
+    h3  Client: #{client.firstname}
 
-  
-  
-  p NIN Number: #{client.ninnumber}
+    
+    
+    p NIN Number: #{client.ninnumber}
 
-  p Cartype: #{client.cartype}
+    p Cartype: #{client.cartype}
 
-  p Number plate: #{client.carnumber}
+    p Number plate: #{client.carnumber}
 
-  h3 Service: #{client.service}
+    h3 Service: #{client.service}
 
-  h3 Price: #{client.price}
+    h3 Price: #{client.price}
 
-  p Better Choices, Happy Customers
-  
-  p NB:"Don't drive drunk" 
+    p Better Choices, Happy Customers
+    
+    p NB:"Don't drive drunk" 
 
 script(src='/bootstrap/set/bootstrap.js') 
 script(src='/js/back.js') 

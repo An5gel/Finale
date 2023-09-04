@@ -31,7 +31,7 @@ head
                   a.dropdown-item(href='#') Something else here
             li.nav-item
               a.nav-link.disabled(aria-disabled='true')
-          button#btn.btn.btn-outline-primary(type='button' onclick="location.href = 'signup';")
+          button#btn.btn.btn-outline-primary(type='button' onclick="goBack()")
               | Back
     p userid: #{UserID}
     .register
@@ -40,6 +40,8 @@ head
         h3  BATTERY REGISTER
         img(src='/images/bat.jpeg' alt='')
         .form.row.g-3
+          .col-md-12
+            input#receiptid.form-control(type='hidden' name='receiptid' value=receiptid  )
           .col-md-6
             label.form-label(for='firstname')  Name*
             input#firstname.form-control(type='text' name='firstname' )
@@ -99,4 +101,5 @@ head
           .col-12
             button.ton-b.btn.btn-primary(type='submit' onsubmit="location.href='services'") SUBMIT
   script(src='/js/batteryvalidation.js')
+  script(src='/js/back.js')
   script(src='/bootstrap/set/bootstrap/js')

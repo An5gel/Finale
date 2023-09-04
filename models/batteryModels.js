@@ -45,8 +45,12 @@ const BatterySchema = new mongoose.Schema ({
         type : String,
     
 
-    }
+    },
+    receiptid:{
+        type : String,
     
+
+    }
    
    
     
