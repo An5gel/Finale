@@ -39,7 +39,7 @@ router.get("/batteryReport", async(req, res)=>{
     try{
      let items = await BatteryClients.find();
      let price = await BatteryClients.aggregate([
-            { $group: { _id: "$all", totalPrice: { $sum: "$price" } } },
+            { $group: { _id: "$all",totalPrice: { $sum: "$price" } } },
           ]);
           
       console.log(price);
